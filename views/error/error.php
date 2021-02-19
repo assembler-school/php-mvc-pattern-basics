@@ -11,7 +11,7 @@
 
 <body>
   <p>
-    <?= isset($errorMsg) ? $errorMsg : "Fatal error"  ?>
+    <?= isset($errorMsg) ? $errorMsg : "Fatal error" ?>
   </p>
   <a href="index.php">return menu</a>
 </body>

@@ -21,7 +21,9 @@ if (isset($_REQUEST['action'])) {
  */
 function getAllEmployees()
 {
-  //
+  $employees = get();
+  require_once VIEWS . "employee/employeeDashboard.php";
+
 }
 
 /**
@@ -29,5 +31,6 @@ function getAllEmployees()
  */
 function getEmployee($request)
 {
-  //
+  $employee = getById($request);
+  require_once VIEWS . "employee/employee.php";
 }
