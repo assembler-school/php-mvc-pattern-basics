@@ -1,7 +1,7 @@
 <?php
 
 define("BASE_PATH", dirname(__FILE__));
-include_once "config/constants.php";
+require_once "config/constants.php";
 require_once "helpers/helpers.php";
 
 // This is the entry point of your application, all your application must be executed in

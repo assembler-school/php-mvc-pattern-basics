@@ -1,5 +1,4 @@
 <?php
-require_once MODELS . "travelModel.php";
 
 if (isset($_REQUEST['action'])) {
   function_exists($_REQUEST['action']) ?
@@ -8,3 +7,5 @@ if (isset($_REQUEST['action'])) {
 } else {
   error('There is no such action');
 }
+
+require_once MODELS . "travelModel.php";
