@@ -8,7 +8,13 @@
 </head>
 <body>
   <form action="">
-    <input type="text">
+    <label for="first_name">First name</label>
+      <input type="text" name="first_name">
+    <label for="last_name">Last name</label>
+      <input type="text" name="last_name">
+    <label for="gender">Gender</label>
+      <input type="text" name="gender">
+    <input type="submit" name="submit" value="Submit">
   </form>
 </body>
 </html>

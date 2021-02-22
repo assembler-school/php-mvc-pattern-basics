@@ -16,3 +16,8 @@ define("MODELS", BASE_PATH . '/models/');
 
 //RESOURCES
 define("RESOURCES", BASE_PATH . '/resources/');
+
+// if (!$condb) {
+//   die("Connection failed: " . mysqli_connect_error());
+// }
+// echo "Connected successfully";
