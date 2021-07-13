@@ -28,10 +28,12 @@ Readme example: [https://gist.github.com/Villanuevand/6386899f70346d4580c7232325
   >
   >- **Controller**: part of the pattern that acts on both model and view. It controls the data flow into model object and updates the view whenever data changes. It keeps view and model separate.
 - Draw a diagram where you understand the MVC pattern clearly.
+  
   ![alt text](assets/img/MVC_Diagram.png)
 - Explain in which cases you would use this pattern.
   > It is useful for any kind application that requires to have some parts of its UI updated dynamically depending on actions the user takes, specially if those actions entail gathering data from an external source such as a database, which will cause updates in the UI.
 - Describe step by step what happens in this pattern from when you create a Request until a Response is returned (you can give more than one example if you consider it necessary).
+
   ![alt text](assets/img/MVC_Request_Response_Flow.png)
 - What advantages do you think this pattern has to use?
   >- Multiple developers can work simultaneously on the model, controller and views.
