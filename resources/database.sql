@@ -8,23 +8,21 @@ CREATE TABLE employees (
     emp_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NUll,
-    gender ENUM('M', "F") NOT NULL
-    age INT(2) NOT NULL,
-    PRIMARY KEY (emp_id)
+    gender ENUM('M', "F") NOT NULL,
+    age INT(2) NOT NULL
 );
 
 CREATE TABLE movies (
     movie_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     movie_name VARCHAR(100) NOT NULL,
     released_year INT(4) NOT NULL,
-    runtime INT(3) NOT NULL,
-    PRIMARY KEY (movie_id)
+    runtime INT(3) NOT NULL
 );
 
 /* INSERT DATA */
 INSERT INTO employees (first_name, last_name, gender, age)
 VALUES 
-('Brandon', 'Parry', ,'M', 27),
+('Brandon', 'Parry','M', 27),
 ('William', 'Thomas', 'M', 30),
 ('Betty', 'Roberts', 'F', 28),
 ('Cathy', 'Willcox', 'F', 31),
@@ -35,12 +33,6 @@ VALUES
 ('David', 'Morgan', 'M', 37),
 ('Carole', 'Parker', 'F', 39),
 ('Henry', 'Himes', 'M', 32);
-
-
-
-
-
-
 
 
 INSERT INTO movies (movie_name, released_year, runtime)
