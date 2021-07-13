@@ -35,12 +35,6 @@ VALUES
 ('Henry', 'Himes', 'M', 32);
 
 
-
-
-
-
-
-
 INSERT INTO movies (movie_name, released_year, runtime)
 VALUES 
 ('Avatar', 2009, 162),
