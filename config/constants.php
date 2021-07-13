@@ -1,7 +1,7 @@
 <?php
 
 //BASE_PATH
-define("BASE_PATH", __DIR__);
+define("BASE_PATH", dirname(__DIR__));
 
 //CONTROLLERS
 define("CONTROLLERS", BASE_PATH . '/controllers/');
