@@ -9,11 +9,11 @@ function get()
         $response = mysqli_query($dbConst, $query);
         return mysqli_fetch_all($response);
     } catch (Exception $e) {
-        echo $e->getMessage();
+        return $e->getMessage();
     }
 }
 
-function getMovieById($id)
+function getEmployeeById($id)
 {
     try {
         $dbConst = mysqli_connect(DB_HOST, USER_NAME, DB_PASSWORD, DB_NAME);
@@ -21,6 +21,6 @@ function getMovieById($id)
         $response = mysqli_query($dbConst, $query);
         return mysqli_fetch_all($response);
     } catch (Exception $e) {
-        echo $e->getMessage();
+        return $e->getMessage();
     }
 }

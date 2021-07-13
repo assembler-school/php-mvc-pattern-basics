@@ -4,6 +4,7 @@ require_once MODELS . "employeeModel.php";
 
 //OBTAIN THE ACCION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
 
+
 //Keep in mind that the function to be executed has to be one of the ones declared in this controller
 // TODO Implement the logic
 
@@ -15,7 +16,12 @@ require_once MODELS . "employeeModel.php";
  */
 function getAllEmployees()
 {
-    //
+    try {
+        $employees = get();
+        require_once VIEWS . "/employee/employee.php";
+    } catch (exception $e) {
+        error($e->getMessage());
+    }
 }
 
 /**
@@ -24,6 +30,16 @@ function getAllEmployees()
 function getEmployee($request)
 {
     //
+    if ($_REQUEST['id'] !== null && $_REQUEST['id'] !== "") {
+        error('ERROR - El id de la query no puede estar vacio.');
+    }
+
+    try {
+        $employe = getEmployeeById($_REQUEST['id']);
+        require_once VIEWS . "/employee/employeeDashboard.php";
+    } catch (exception $e) {
+        error($e->getMessage());
+    }
 }
 
 /**
