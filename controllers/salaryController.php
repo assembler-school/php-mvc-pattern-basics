@@ -49,6 +49,10 @@ function getEmployeeSalary($id)
     if (is_array($salaryEmployees)) {
         require_once VIEWS . "salary/salary.php";
     } else {
+        if (!$salaryEmployees) {
+            error("Employee with id $id not found!");
+            exit;
+        }
         error($salaryEmployees);
     }
 }
