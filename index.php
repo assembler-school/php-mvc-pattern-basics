@@ -4,14 +4,11 @@
 // the "index.php", in such a way that you must include the controller passed by the URL
 // dynamically so that it ends up including the view.
 
-// include_once "config/constants.php";
-
-// Connection to Database
-$employeesDB = mysqli_connect("localhost", "Rick", "newton", "employees");
-
+include_once "config/constants.php";
 
 // TODO Implement the logic to include the controller passed by the URL dynamically
 // In the event that the controller passed by URL does not exist, you must show the error view.
+
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +22,7 @@ $employeesDB = mysqli_connect("localhost", "Rick", "newton", "employees");
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <!-- Assets -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -35,43 +33,26 @@ $employeesDB = mysqli_connect("localhost", "Rick", "newton", "employees");
 </head>
 
 <body>
-    <!-- Main view -->
-    <h1>Main view</h1>
-    <a href="#" class="btn btn-outline-primary">Employees</a>
-    <a href="#" class="btn btn-outline-secondary">Departments</a>
-    <br>
-
-    <!-- Employees view -->
-    <?php
-
-    $sql = "SELECT first_name, last_name FROM employees";
-    $result = mysqli_query($employeesDB, $sql);
-
-    if (mysqli_num_rows($result) > 0) {
-        // output data of each row
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo print_r($row, true) . "<br>";
-            // echo "Name: " . $row["first_name"] . " - Last name: " . $row["last_name"] . "<br>";
-        }
-    } else {
-        echo "No results";
-    }
-    ?>
-    <br>
     <!-- Departments view -->
     <?php
-    $sql = "SELECT dept_no, dept_name FROM departments";
-    $result = mysqli_query($employeesDB, $sql);
 
-    if (mysqli_num_rows($result) > 0) {
-        // output data of each row
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo print_r($row, true) . "<br>";
-            // echo "Name: " . $row["first_name"] . " - Last name: " . $row["last_name"] . "<br>";
+    if (isset($_GET["controller"])) {
+        $controller = $_GET["controller"];
+        $action = $_GET["action"];
+
+        // Employees controller
+        if ($controller == "employees") {
+            require_once CONTROLLERS . "employeesController.php";
+        }
+        // Departments controller
+        elseif ($controller == "departments") {
+            require_once CONTROLLERS . "departmentsController.php";
         }
     } else {
-        echo "No results";
+        // Main view
+        require_once VIEWS . "main/main.php";
     }
+
     ?>
 
 </body>

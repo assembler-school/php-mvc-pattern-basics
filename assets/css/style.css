@@ -2,9 +2,27 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  /* outline: 1px blue solid; */
 }
 
 /* Main container */
 body {
-  background-color: rgb(223, 221, 216);
+  padding: 35px;
+  height: 100vh;
 }
+
+.main-title {
+  color: blue;
+  margin-bottom: 30px;
+}
+
+a {
+  color: black;
+}
+
+/* Dashboard */
+.delete-icon {
+  color: rgb(196, 12, 12);
+}
+
+/* Employee / Deparment */
