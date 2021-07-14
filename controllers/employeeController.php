@@ -35,7 +35,7 @@ function getEmployee($request)
     }
 
     try {
-        $employe = getEmployeeById($_REQUEST['id']);
+        $employee = getEmployeeById($_REQUEST['id']);
         require_once VIEWS . "/employee/employeeDashboard.php";
     } catch (exception $e) {
         error($e->getMessage());
