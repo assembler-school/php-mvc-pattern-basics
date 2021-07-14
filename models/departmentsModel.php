@@ -3,21 +3,47 @@
 function getDepartments()
 {
     // Connection to Database
-    $employeesDB = mysqli_connect("localhost", "Rick", "newton", "employees");
+    require CONFIG . "db.php";
 
-    // Get all employees from DB
-    $sql = "SELECT dept_no, dept_name FROM departments";
-    $result = mysqli_query($employeesDB, $sql);
+    // Get all departments and their employees from DB
+    $query = "SELECT
+                departments.dept_no,
+                departments.dept_name,
+                COUNT(dept_emp.emp_no) as 'num-employees'
+            FROM
+                departments
+            INNER JOIN dept_emp
+            ON departments.dept_no = dept_emp.dept_no
+            GROUP BY departments.dept_no";
 
-    if (mysqli_num_rows($result) > 0) {
-        // output data of each row
+    $result = mysqli_query($employeesDB, $query);
+
+    // Add each department to a new array
+    $departmentsArray = array();
+    if (
+        mysqli_num_rows($result) > 0
+    ) {
         while ($row = mysqli_fetch_assoc($result)) {
-            // echo print_r($row, true) . "<br>";
-            echo "Dept. id: " . $row["dept_no"] . " - Dept. Name: " . $row["dept_name"] . "<br>";
+            array_push($departmentsArray, $row);
         }
     }
+    // Return the departments' array
+    return $departmentsArray;
 }
 
 function getById($id)
 {
+    // Connection to Database
+    require CONFIG . "db.php";
+
+    $query = "SELECT * FROM departments WHERE dept_no = '$id'";
+    $result = mysqli_query($employeesDB, $query);
+
+    if (
+        mysqli_num_rows($result) > 0
+    ) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            return $row;
+        }
+    }
 }

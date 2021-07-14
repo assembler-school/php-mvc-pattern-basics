@@ -12,8 +12,7 @@ switch ($_GET["action"]) {
         getAllDepartments();
         break;
     case "getDepartment":
-        // getDepartment();
-        echo "Get department";
+        getDepartment($_GET["id"]);
         break;
     default:
         echo "Not valid action";
@@ -27,7 +26,8 @@ switch ($_GET["action"]) {
  */
 function getAllDepartments()
 {
-    getDepartments();
+    $departments = getDepartments();
+    require_once VIEWS . "departments/departmentDashboard.php";
 }
 
 /**
@@ -35,7 +35,8 @@ function getAllDepartments()
  */
 function getDepartment($request)
 {
-    //
+    $department = getById($request);
+    require_once VIEWS . "departments/department.php";
 }
 
 /**
