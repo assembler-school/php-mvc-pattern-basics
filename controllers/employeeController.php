@@ -1,35 +1,52 @@
 <?php
+    
+    // include_once "../config/constants.php"; // must be deleted later
+    // TODO ONLY REQUIRE MODELS HERE!!!
 
-require_once MODELS . "employeeModel.php";
+    // TODO INSIDE THE FUNCTIONS VIEWS MUST BE REQUIRED DEPENDING ON DATA ACQUIRED FROM MODELS!!!
+    require_once MODELS . "employeeModel.php";
+    // require_once "../models/employeeModel.php";
 
-//OBTAIN THE ACCION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
+    //OBTAIN THE ACCION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
 
-//Keep in mind that the function to be executed has to be one of the ones declared in this controller
-// TODO Implement the logic
+    //Keep in mind that the function to be executed has to be one of the ones declared in this controller
+    // TODO Implement the logic
 
 
-/* ~~~ CONTROLLER FUNCTIONS ~~~ */
+    /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
-/**
- * This function calls the corresponding model function and includes the corresponding view
- */
-function getAllEmployees()
-{
-    //
-}
+    /**
+     * This function calls the corresponding model function and includes the corresponding view
+     */
+    function getAllEmployeesController(){
 
-/**
- * This function calls the corresponding model function and includes the corresponding view
- */
-function getEmployee($request)
-{
-    //
-}
+        $data = getAllEmployeesModel();
+        // require_once VIEWS."employee/employeeDashboard.php";
+        // getAllEmployeesModel($conn);
+        if(!empty($data)){
+            require_once VIEWS."employee/employeeDashboard.php";
+        }else{
+            require_once VIEWS."employee/error.php";
+        }
+        
+    }
 
-/**
- * This function includes the error view with a message
- */
-function error($errorMsg)
-{
-    require_once VIEWS . "/error/error.php";
-}
+    /**
+     * This function calls the corresponding model function and includes the corresponding view
+     */
+    function getEmployee($request)
+    {
+        //
+    }
+
+    /**
+     * This function includes the error view with a message
+     */
+    function error($errorMsg)
+    {
+        require_once VIEWS . "/error/error.php";
+    }
+
+    // echo "I'm in employee controller <br>";
+    getAllEmployeesController();
+?>
