@@ -3,41 +3,35 @@
     <div class="col-2 text-center border">
       <h5>Employee no</h5>
     </div>
-    <div class="col-2 text-center border">
+    <div class="col text-center border">
       <h5>Name</h5>
     </div>
     <div class="col-2 text-center border">
-      <h5>Last name</h5>
+      <h5>Salary</h5>
     </div>
     <div class="col-2 text-center border">
-      <h5>Birth date</h5>
+      <h5>From datee</h5>
     </div>
     <div class="col-2 text-center border">
-      <h5>Hire date</h5>
-    </div>
-    <div class="col-2 text-center border">
-      <h5>Gender</h5>
+      <h5>To date</h5>
     </div>
   </div>
-  <?php foreach ($allEmployees as $employee) : ?>
+  <?php foreach ($allSalaries as $salary) : ?>
     <div class="row">
       <div class="col-2 text-center border">
-        <p><?= $employee["emp_no"] ?></p>
+        <p><?= $salary["emp_no"] ?></p>
+      </div>
+      <div class="col text-center border">
+        <p><?= $salary["first_name"] ?></p>
       </div>
       <div class="col-2 text-center border">
-        <p><?= $employee["first_name"] ?></p>
+        <p><?= $salary["salary"] ?></p>
       </div>
       <div class="col-2 text-center border">
-        <p><?= $employee["last_name"] ?></p>
+        <p><?= $salary["from_date"] ?></p>
       </div>
       <div class="col-2 text-center border">
-        <p><?= $employee["birth_date"] ?></p>
-      </div>
-      <div class="col-2 text-center border">
-        <p><?= $employee["hire_date"] ?></p>
-      </div>
-      <div class="col-2 text-center border">
-        <p><?= $employee["gender"] ?></p>
+        <p><?= $salary["to_date"] ?></p>
       </div>
     </div>
   <?php endforeach; ?>

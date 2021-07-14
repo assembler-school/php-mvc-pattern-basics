@@ -25,8 +25,8 @@
       require_once CONTROLLERS . "/employeeController.php";
     }
     // Calling departments controller using departments action
-    elseif ($controller == "departments") {
-      require_once CONTROLLERS . "/departmentsController.php";
+    elseif ($controller == "salaries") {
+      require_once CONTROLLERS . "/salaryController.php";
     }
   } else {
     // TODO Implement the logic to include the controller passed by the URL dynamically
@@ -36,11 +36,10 @@
     <div class=row>
       <div class=col-6 >
         <a href=./index.php?controller=employees&action=getAllEmployees class='btn btn-success' >Get Employees</a>
-        <a href=./index.php?controller=departments&action=getAllDepartments class='btn btn-info' >Get Departmens</a>
+        <a href=./index.php?controller=salaries&action=getAllSalaries class='btn btn-info' >Get Salaries</a>
       </div>
     </div>
     ";
-
   }
 
   ?>

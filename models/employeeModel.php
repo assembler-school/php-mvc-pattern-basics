@@ -2,9 +2,9 @@
 
 function get()
 {
-  require_once("./config/employeesDb.php");
+  require_once("./config/employeeDb.php");
 
-  $employees = mysqli_query($employeesDBConnection, "SELECT * FROM employees");
+  $employees = mysqli_query($employeeDBConnection, "SELECT * FROM employees");
 
   return $employees;
 }
