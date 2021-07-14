@@ -16,7 +16,6 @@
 
     }else{
         if($_GET['controller'] === 'employees'){
-            echo " going into employee controller";
             require_once CONTROLLERS."employeeController.php";
         }
         else if($_GET['controller'] === 'travels'){

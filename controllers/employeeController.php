@@ -21,12 +21,12 @@
     function getAllEmployeesController(){
 
         $data = getAllEmployeesModel();
-        // require_once VIEWS."employee/employeeDashboard.php";
-        // getAllEmployeesModel($conn);
+
+        // Choosing view depending on if $data is empty
         if(!empty($data)){
             require_once VIEWS."employee/employeeDashboard.php";
         }else{
-            require_once VIEWS."employee/error.php";
+            require_once VIEWS."error/error.php";
         }
         
     }
