@@ -7,6 +7,14 @@ require_once MODELS . "employeeModel.php";
 //Keep in mind that the function to be executed has to be one of the ones declared in this controller
 // TODO Implement the logic
 
+switch ($_GET["action"]) {
+    case "getAllEmployees":
+        getAllEmployees();
+        break;
+    default:
+        break;
+}
+
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
@@ -15,7 +23,8 @@ require_once MODELS . "employeeModel.php";
  */
 function getAllEmployees()
 {
-    //
+    $allEmployees = get();
+    require_once VIEWS . "employee/employeeDashboard.php";
 }
 
 /**
