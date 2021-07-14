@@ -7,17 +7,23 @@ require_once MODELS . "employeeModel.php";
 //Keep in mind that the function to be executed has to be one of the ones declared in this controller
 // TODO Implement the logic
 
-switch ($_GET["action"]) {
-    case "getAllEmployees":
-        getAllEmployees();
-        break;
-    case "getEmployee":
-        getEmployee($_GET["id"]);
-        break;
-    default:
-        error("Not valid action");
-        break;
+if (function_exists($action)) {
+    call_user_func($action, $_REQUEST);
+} else {
+    error("Not valid action");
 }
+
+// switch ($_GET["action"]) {
+//     case "getAllEmployees":
+//         getAllEmployees();
+//         break;
+//     case "getEmployee":
+//         getEmployee($_GET["id"]);
+//         break;
+//     default:
+//         error("Not valid action");
+//         break;
+// }
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
@@ -33,9 +39,9 @@ function getAllEmployees()
 /**
  * This function calls the corresponding model function and includes the corresponding view
  */
-function getEmployee($request)
+function getEmployee($get)
 {
-    $employee = getById($request);
+    $employee = getById($get["id"]);
     require_once VIEWS . "employee/employee.php";
 }
 

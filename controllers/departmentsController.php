@@ -7,17 +7,23 @@ require_once MODELS . "departmentsModel.php";
 //Keep in mind that the function to be executed has to be one of the ones declared in this controller
 // TODO Implement the logic
 
-switch ($_GET["action"]) {
-    case "getAllDepartments":
-        getAllDepartments();
-        break;
-    case "getDepartment":
-        getDepartment($_GET["id"]);
-        break;
-    default:
-        echo "Not valid action";
-        break;
+if (function_exists($action)) {
+    call_user_func($action, $_REQUEST);
+} else {
+    error("Not valid action");
 }
+
+// switch ($_GET["action"]) {
+//     case "getAllDepartments":
+//         getAllDepartments();
+//         break;
+//     case "getDepartment":
+//         getDepartment($_GET["id"]);
+//         break;
+//     default:
+//         echo "Not valid action";
+//         break;
+// }
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
@@ -33,13 +39,18 @@ function getAllDepartments()
 /**
  * This function calls the corresponding model function and includes the corresponding view
  */
-function getDepartment($request)
+function getDepartment($get)
 {
-    $department = getById($request);
+    $department = getById($get["id"]);
     $departmentData = $department[0];
     $departmentEmployees = $department[1];
     require_once VIEWS . "departments/department.php";
 }
+
+/**
+ * This function calls the corresponding model function and includes the corresponding view
+ */
+
 
 /**
  * This function includes the error view with a message
