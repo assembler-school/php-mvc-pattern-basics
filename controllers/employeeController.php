@@ -21,7 +21,10 @@ if (function_exists($action)) {
 
     call_user_func($action, $params);
 } else {
-    error("Invalid function");
+    error(
+        "Invalid function \"" . $action .
+            "\", please enter an existing function"
+    );
     exit;
 }
 

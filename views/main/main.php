@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <title>MVC basics</title>
 </head>
@@ -36,7 +37,7 @@
     </nav>
 
     <div class="container">
-        <h2>Explanation</h2>
+        <!-- <h2>Explanation</h2> -->
         <p>MVC Pattern stands for Model-View-Controller Pattern. This pattern is used to separate application's concerns.</p>
         <ul class="list">
             <li>
@@ -52,7 +53,9 @@
         <!-- <h2>Implementation</h2>
         <p>We are going to create a <i>Employee</i> object acting as a model.<i>StudentView</i> will be a view class which can print student details on console and <i>StudentController</i> is the controller class responsible to store data in <i>Student</i> object and update view <i>StudentView</i> accordingly.</p>
         <p><i>MVCPatternDemo</i>, our demo class, will use <i>StudentController</i> to demonstrate use of MVC pattern.</p> -->
-        <img class="img-fluid" src="./assets/img/mvc-diagram.png" alt="MVC Pattern Diagram" />
+        <div class="row justify-content-center">
+            <img class="img-fluid centered-image" src="./assets/img/mvc-diagram.png" alt="MVC Pattern Diagram" />
+        </div>
     </div>
 </body>
 
