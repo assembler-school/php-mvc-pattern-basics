@@ -8,3 +8,13 @@ include_once "config/constants.php";
 
 // TODO Implement the logic to include the controller passed by the URL dynamically
 // In the event that the controller passed by URL does not exist, you must show the error view.
+
+if (isset($_GET['controller'])) {
+    if ($_GET['controller'] === 'employee') {
+        require_once CONTROLLERS . 'employeeController.php';
+    } elseif ($_GET['controller'] === 'department') {
+        require_once CONTROLLERS . 'departmentController.php';
+    }
+} else {
+    require_once VIEWS . 'main/main.php';
+}

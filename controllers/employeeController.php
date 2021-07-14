@@ -2,7 +2,20 @@
 
 require_once MODELS . "employeeModel.php";
 
-//OBTAIN THE ACCION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
+//OBTAIN THE ACTION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
+if (function_exists($_GET["action"])) {
+    call_user_func($_GET["action"]);
+}
+
+// switch ($_GET['action']) {
+//     case 'getAllEmployees':
+//         getAllEmployees($employeesDB);
+//         break;
+
+//     default:
+//         # code...
+//         break;
+// }
 
 //Keep in mind that the function to be executed has to be one of the ones declared in this controller
 // TODO Implement the logic
@@ -15,14 +28,16 @@ require_once MODELS . "employeeModel.php";
  */
 function getAllEmployees()
 {
-    //
+    $employees = getAll();
+    require_once VIEWS . 'employee/employeeDashboard.php';
 }
 
 /**
  * This function calls the corresponding model function and includes the corresponding view
  */
-function getEmployee($request)
+function getEmployee($employeesDB)
 {
+    echo $_GET['id'];
     //
 }
 
