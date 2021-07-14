@@ -9,12 +9,14 @@ if (!isset($_GET['action'])) {
 }
 
 $action = $_GET['action'];
-$request = "";
+$id = $_GET['id'] ?? null;
 
 if (function_exists($action)) {
     list($params) = [
         'getAllEmployees' => [[]],
-        'getEmployee' => [[$request]],
+        'getEmployee' => [$id],
+        'updateEmployee' => [$_POST],
+        'deleteEmployee' => [$_POST],
     ][$action] ?? [[]];
 
     call_user_func($action, $params);
@@ -39,9 +41,36 @@ function getAllEmployees()
 /**
  * This function calls the corresponding model function and includes the corresponding view
  */
-function getEmployee($request)
+function getEmployee($id)
 {
-    //
+    $employee = getEmployeeById($id);
+    require_once VIEWS . "employee/employee.php";
+}
+
+/**
+ * This function updates employee
+ */
+function updateEmployee($newEmployee)
+{
+    $result = updateEmployeeById($newEmployee);
+    if ($result === true) {
+        header("Location:?controller=employees&action=getAllEmployees");
+    } else {
+        error($result);
+    };
+}
+
+/**
+ * This function deletes employee
+ */
+function deleteEmployee($post)
+{
+    $result = deleteEmployeeById($post['emp_no']);
+    if ($result === true) {
+        header("Location:?controller=employees&action=getAllEmployees");
+    } else {
+        error($result);
+    };
 }
 
 /**
