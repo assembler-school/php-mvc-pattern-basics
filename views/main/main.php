@@ -35,6 +35,25 @@
         </div>
     </nav>
 
+    <div class="container">
+        <h2>Explanation</h2>
+        <p>MVC Pattern stands for Model-View-Controller Pattern. This pattern is used to separate application's concerns.</p>
+        <ul class="list">
+            <li>
+                <p><b>Model</b> - Model represents an object or JAVA POJO carrying data. It can also have logic to update controller if its data changes.</p>
+            </li>
+            <li>
+                <p><b>View</b> - View represents the visualization of the data that model contains.</p>
+            </li>
+            <li>
+                <p><b>Controller</b> - Controller acts on both model and view. It controls the data flow into model object and updates the view whenever data changes. It keeps view and model separate.</p>
+            </li>
+        </ul>
+        <!-- <h2>Implementation</h2>
+        <p>We are going to create a <i>Employee</i> object acting as a model.<i>StudentView</i> will be a view class which can print student details on console and <i>StudentController</i> is the controller class responsible to store data in <i>Student</i> object and update view <i>StudentView</i> accordingly.</p>
+        <p><i>MVCPatternDemo</i>, our demo class, will use <i>StudentController</i> to demonstrate use of MVC pattern.</p> -->
+        <img class="img-fluid" src="./assets/img/mvc-diagram.png" alt="MVC Pattern Diagram" />
+    </div>
 </body>
 
 </html>
