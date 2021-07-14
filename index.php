@@ -1,11 +1,8 @@
 <?php
 
-// This is the entry point of your application, all your application must be executed in
-// the "index.php", in such a way that you must include the controller passed by the URL
-// dynamically so that it ends up including the view.
-
 require_once "config/constants.php";
 
+// if no controller
 if (!isset($_GET['controller'])) {
     require_once VIEWS . "/main/main.php";
     exit;
@@ -21,5 +18,6 @@ if ($_GET['controller'] == 'salaries') {
     exit;
 }
 
-// TODO: !! Vista de error 404
-// Error view
+// if wrong controller
+$errorMsg = "This controller is not available";
+require_once VIEWS . "/error/error.php";

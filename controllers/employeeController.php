@@ -49,7 +49,15 @@ function getAllEmployees()
 function getEmployee($id)
 {
     $employee = getEmployeeById($id);
-    require_once VIEWS . "employee/employee.php";
+    if (is_array($employee)) {
+        require_once VIEWS . "employee/employee.php";
+    } else {
+        if (!$employee) {
+            error("Employee with id $id not found!");
+            exit;
+        }
+        error($employee);
+    }
 }
 
 /**
