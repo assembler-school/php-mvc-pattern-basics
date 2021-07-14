@@ -10,11 +10,11 @@
 
 <body>
     <section>
-        <h1>Hello im main view</h1>
+        <h1>Hello im main.php view</h1>
         <ul class="link-group">
             <li class="list-group-item"><a href="index.php?controller=employee&action=getAllEmployees">Employees</a></li>
             <li class="list-group-item"><a href="index.php?controller=movie&action=getAllMovies">Movies</a></li>
-            //Where the user is interacting, clicking, etc, we call to Controllers
+            <!-- Where the user is interacting, clicking, etc, we call to Controllers -->
         </ul>
     </section>
 </body>
