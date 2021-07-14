@@ -1,0 +1,19 @@
+{
+  "name": "php-mvc-pattern-basics",
+  "version": "1.0.0",
+  "description": "Readme example: [https://gist.github.com/Villanuevand/6386899f70346d4580c723232524d35a](https://gist.github.com/Villanuevand/6386899f70346d4580c723232524d35a)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbenalia/php-mvc-pattern-basics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbenalia/php-mvc-pattern-basics/issues"
+  },
+  "homepage": "https://github.com/bbenalia/php-mvc-pattern-basics#readme"
+}

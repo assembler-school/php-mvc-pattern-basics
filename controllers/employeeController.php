@@ -2,20 +2,38 @@
 
 require_once MODELS . "employeeModel.php";
 
-//OBTAIN THE ACCION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
+// if no action
+if (!isset($_GET['action'])) {
+    error("There is no action");
+    exit;
+}
 
-//Keep in mind that the function to be executed has to be one of the ones declared in this controller
-// TODO Implement the logic
+$action = $_GET['action'];
+$request = "";
 
+if (function_exists($action)) {
+    list($params) = [
+        'getAllEmployees' => [[]],
+        'getEmployee' => [[$request]],
+    ][$action] ?? [[]];
 
-/* ~~~ CONTROLLER FUNCTIONS ~~~ */
+    call_user_func($action, $params);
+} else {
+    error("Invalid function");
+    exit;
+}
 
+/*
+ * CONTROLLER FUNCTIONS  
+ * ----------------------------------------------------------------
+ */
 /**
  * This function calls the corresponding model function and includes the corresponding view
  */
 function getAllEmployees()
 {
-    //
+    $employees = getEmployees();
+    require_once VIEWS . "employee/employeeDashboard.php";
 }
 
 /**
