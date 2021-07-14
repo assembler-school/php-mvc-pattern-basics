@@ -24,6 +24,13 @@
     if ($controller == "employees") {
       require_once CONTROLLERS . "/employeeController.php";
     }
+    // Calling employee controller
+    elseif ($controller == "employee") {
+      require_once CONTROLLERS . "/employeeController.php";
+    }
+    elseif ($controller == "holidays") {
+      require_once CONTROLLERS . "/employeeController.php";
+    }
     // Calling departments controller using departments action
     elseif ($controller == "salaries") {
       require_once CONTROLLERS . "/salaryController.php";
