@@ -8,15 +8,20 @@ if (!isset($_GET['action'])) {
 }
 
 $action = $_GET['action'];
+$id = $_GET['id'] ?? null;
 
 if (function_exists($action)) {
     list($params) = [
         'getAllEmployees' => [[]],
+        'getEmployeeSalary' => [$id],
     ][$action] ?? [[]];
 
     call_user_func($action, $params);
 } else {
-    error("Invalid function");
+    error(
+        "Invalid function \"" . $action .
+            "\", please enter an existing function"
+    );
     exit;
 }
 
@@ -32,4 +37,26 @@ function getAllEmployees()
 {
     $salaryEmployees = getSalaryEmployees();
     require_once VIEWS . "salary/salaryDashboard.php";
+}
+
+/**
+ * This function calls the corresponding model function and 
+ * includes the corresponding view
+ */
+function getEmployeeSalary($id)
+{
+    $salaryEmployees = getSalaryEmployeeById($id);
+    if (is_array($salaryEmployees)) {
+        require_once VIEWS . "salary/salary.php";
+    } else {
+        error($salaryEmployees);
+    }
+}
+
+/**
+ * This function includes the error view with a message
+ */
+function error($errorMsg)
+{
+    require_once VIEWS . "/error/error.php";
 }

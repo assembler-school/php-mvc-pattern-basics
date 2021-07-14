@@ -44,8 +44,9 @@
                     <th scope="col">first_name</th>
                     <th scope="col">last_name</th>
                     <th scope="col">salary</th>
-                    <th scope="col">from_date</th>
-                    <th scope="col">to_date</th>
+                    <!-- <th scope="col">from_date</th>
+                    <th scope="col">to_date</th> -->
+                    <th scope="col">action</th>
                 </tr>
             </thead>
             <tbody>
@@ -55,8 +56,14 @@
                         <td><?= $salaryEmployee['first_name'] ?></td>
                         <td><?= $salaryEmployee['last_name'] ?></td>
                         <td><?= $salaryEmployee['salary'] ?></td>
-                        <td><?= $salaryEmployee['from_date'] ?></td>
-                        <td><?= $salaryEmployee['to_date'] ?></td>
+                        <!-- <td><?= $salaryEmployee['from_date'] ?></td>
+                        <td><?= $salaryEmployee['to_date'] ?></td> -->
+                        <td>
+                            <?php
+                            $link = "?controller=salaries&action=getEmployeeSalary&id=" . $salaryEmployee['emp_no'];
+                            ?>
+                            <a class="btn btn-primary btn-sm" href="<?= $link ?>">Details</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

@@ -22,7 +22,26 @@ function getSalaryEmployees()
     return $employees;
 }
 
+function getSalaryEmployeeById($id)
+{
+    $conn = db_connect();
+    $sql = "SELECT 
+    E.emp_no,E.first_name,E.last_name,S.salary,S.from_date,S.to_date
+    FROM employees E
+    JOIN salaries S
+    ON E.emp_no = S.emp_no
+    WHERE E.emp_no=$id";
 
+    if ($result = mysqli_query($conn, $sql)) {
+        $row = mysqli_fetch_assoc($result);
+        mysqli_close($conn);
+        return $row;
+    }
+
+    $err = mysqli_error($conn);
+    mysqli_close($conn);
+    return $err;
+}
 
 function db_connect()
 {
