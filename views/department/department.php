@@ -10,7 +10,13 @@
 </head>
 
 <body>
-
+    <?php
+    echo "<h3> Department: " . $departmentObject['department']['dept_name'] . "</h3>";
+    echo "<h4> Director: " . $departmentObject['department']['Director'] . "</h4>";
+    echo "<h5> Department average salary: " . intval($departmentObject['department']['avg_salary']) . "</h5>";
+    echo "<h5> Department number: " . $departmentObject['department']['dept_no'] . "</h5>";
+    ?>
+    <h3>Employees:</h3>
     <table class="table">
         <thead>
             <tr>
@@ -20,20 +26,20 @@
                 <th scope="col">Birthdate</th>
                 <th scope="col">Gender</th>
                 <th scope="col">Hire Date</th>
-                <th scope="col">Salary</th>
-                <th scope="col">Department</th>
-                <th scope="col">Title</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <?php
 
-            echo '<tr>';
-            foreach ($employeeArray as $element) {
-                echo '<td>' . $element . '</td>';
+            foreach ($departmentObject['departmentEmployees'] as $employee) {
+                echo '<tr>';
+                foreach ($employee as $element) {
+                    echo '<td>' . $element . '</td>';
+                }
+                echo "<td><a class='btn btn-primary' href=?controller=employee&action=getEmployee&empId=" . $employee['emp_no'] . ">Details</a></td>";
+                echo '</tr>';
             }
-            echo '</tr>';
-
             ?>
         </tbody>
     </table>

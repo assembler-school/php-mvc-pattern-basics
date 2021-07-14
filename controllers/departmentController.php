@@ -25,8 +25,8 @@ function getAllDepartments()
  */
 function getDepartment()
 {
-    $id = $_GET['empId'];
-    $departmentArray = getById($id);
+    $id = $_GET['depId'];
+    $departmentObject = getById($id);
     require_once VIEWS . 'department/department.php';
 }
 
