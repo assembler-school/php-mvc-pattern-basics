@@ -5,11 +5,13 @@ require_once MODELS . "employeeModel.php";
 //Comprobar si llega el action 
 
 //OBTAIN THE ACCION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
+//_FINISH THIS --------
 if (function_exists($action)) {
     call_user_func($action, $_REQUEST);
 } else {
     error("Invalid user action");
 }
+//_FINISH THIS ----
 
 //Keep in mind that the function to be executed has to be one of the ones declared in this controller
 // TODO Implement the logic
