@@ -7,6 +7,7 @@ define("BASE_PATH", dirname(__FILE__));
 include_once "config/constants.php";
 include_once "config/dbConst.php";
 
+
 // echo "<pre>";
 // echo CONTROLLERS . "<br>";
 // echo file_exists(CONTROLLERS . $_REQUEST["controller"] . "Controller.php") ? "YES" : "NO";
@@ -25,10 +26,12 @@ if (isset($_GET["controller"])) {
 } else {
     require_once VIEWS . "main/main.php";
 }
-
+echo "im an echo from index.php";
 
 
 
 // TODO Implement the logic to include the controller passed by the URL dynamically
 // In the event that the controller passed by URL does not exist, you must show the error view.
 // projects_in_progress/php-mvc-pattern-basics/views/error
+
+//1. Index controladores y vistas ok
