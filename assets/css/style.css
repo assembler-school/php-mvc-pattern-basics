@@ -40,3 +40,6 @@ tbody > tr:hover {
 }
 
 /* Employee / Deparment */
+.dept-emp {
+  font-size: 12px;
+}

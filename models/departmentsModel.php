@@ -36,14 +36,42 @@ function getById($id)
     // Connection to Database
     require CONFIG . "db.php";
 
-    $query = "SELECT * FROM departments WHERE dept_no = '$id'";
-    $result = mysqli_query($employeesDB, $query);
+    // Department array
+    $allData = array();
+
+    // Department data
+    $departmentQuery = "SELECT * FROM departments WHERE dept_no = '$id'";
+    $departmentResult = mysqli_query($employeesDB, $departmentQuery);
 
     if (
-        mysqli_num_rows($result) > 0
+        mysqli_num_rows($departmentResult) > 0
     ) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            return $row;
+        while ($row = mysqli_fetch_assoc($departmentResult)) {
+            array_push($allData, $row);
         }
     }
+
+    // Employees in department (array)
+    $employeesQuery = "SELECT
+                CONCAT(employees.first_name, ' ', employees.last_name) as 'Emp-name'
+            FROM
+                employees
+            LEFT JOIN dept_emp
+            ON employees.emp_no = dept_emp.emp_no
+            WHERE dept_emp.dept_no = '$id'";
+
+    $employeesResult = mysqli_query($employeesDB, $employeesQuery);
+
+    $employeesArray = array();
+    if (
+        mysqli_num_rows($employeesResult) > 0
+    ) {
+        while ($row = mysqli_fetch_assoc($employeesResult)) {
+            array_push($employeesArray, $row);
+        }
+    }
+
+    array_push($allData, $employeesArray);
+
+    return $allData;
 }

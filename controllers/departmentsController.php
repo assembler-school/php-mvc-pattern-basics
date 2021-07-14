@@ -36,6 +36,8 @@ function getAllDepartments()
 function getDepartment($request)
 {
     $department = getById($request);
+    $departmentData = $department[0];
+    $departmentEmployees = $department[1];
     require_once VIEWS . "departments/department.php";
 }
 
