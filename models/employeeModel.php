@@ -7,13 +7,13 @@ function getEmployees()
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            $employees[] = $row;
-        }
+        $employees = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        mysqli_close($conn);
+        return $employees;
     }
 
     mysqli_close($conn);
-    return $employees;
+    return null;
 }
 
 function getEmployeeById($id)
