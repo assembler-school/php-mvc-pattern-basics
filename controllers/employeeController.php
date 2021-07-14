@@ -7,19 +7,7 @@ if (function_exists($_GET["action"])) {
     call_user_func($_GET["action"]);
 }
 
-// switch ($_GET['action']) {
-//     case 'getAllEmployees':
-//         getAllEmployees($employeesDB);
-//         break;
-
-//     default:
-//         # code...
-//         break;
-// }
-
 //Keep in mind that the function to be executed has to be one of the ones declared in this controller
-// TODO Implement the logic
-
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
@@ -35,10 +23,11 @@ function getAllEmployees()
 /**
  * This function calls the corresponding model function and includes the corresponding view
  */
-function getEmployee($employeesDB)
+function getEmployee()
 {
-    echo $_GET['id'];
-    //
+    $id = $_GET['empId'];
+    $employeeArray = getById($id);
+    require_once VIEWS . 'employee/employee.php';
 }
 
 /**

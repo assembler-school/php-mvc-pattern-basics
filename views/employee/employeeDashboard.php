@@ -11,7 +11,7 @@
 
 <body>
 
-    <table class="table table-striped">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th scope="col">No.</th>
@@ -20,20 +20,19 @@
                 <th scope="col">Last</th>
                 <th scope="col">Gender</th>
                 <th scope="col">Hire Date</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <?php
-
             foreach ($employees as $employee) {
                 echo '<tr>';
                 foreach ($employee as $element) {
                     echo '<td>' . $element . '</td>';
                 }
+                echo "<td><a class='btn btn-primary' href=?controller=employee&action=getEmployee&empId=" . $employee['emp_no'] . ">Details</a></td>";
                 echo '</tr>';
             }
-
-
             ?>
         </tbody>
     </table>

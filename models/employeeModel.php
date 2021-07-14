@@ -21,4 +21,22 @@ function getAll()
 
 function getById($id)
 {
+    require_once "config/db.php";
+    $query = "
+    SELECT 
+        employees.emp_no,
+        first_name,
+        last_name,
+        birth_date,
+        gender,
+        hire_date,
+        salary,
+        dept_name
+    FROM employees
+        JOIN salaries ON employees.emp_no = salaries.emp_no
+        JOIN dept_emp ON employees.emp_no = dept_emp.emp_no
+        JOIN departments ON dept_emp.dept_no = departments.dept_no
+    WHERE employees.emp_no = $id";
+    $result = mysqli_query($employeesDB, $query);
+    return mysqli_fetch_assoc($result);
 }
