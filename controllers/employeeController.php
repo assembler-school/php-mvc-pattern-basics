@@ -30,7 +30,8 @@ if (function_exists($action)) {
  * ----------------------------------------------------------------
  */
 /**
- * This function calls the corresponding model function and includes the corresponding view
+ * This function calls the corresponding model function and 
+ * includes the corresponding view
  */
 function getAllEmployees()
 {
@@ -39,7 +40,8 @@ function getAllEmployees()
 }
 
 /**
- * This function calls the corresponding model function and includes the corresponding view
+ * This function calls the corresponding model function and 
+ * includes the corresponding view
  */
 function getEmployee($id)
 {
