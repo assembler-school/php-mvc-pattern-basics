@@ -31,11 +31,13 @@ function getById($id)
         gender,
         hire_date,
         salary,
-        dept_name
+        dept_name,
+        title
     FROM employees
         JOIN salaries ON employees.emp_no = salaries.emp_no
         JOIN dept_emp ON employees.emp_no = dept_emp.emp_no
         JOIN departments ON dept_emp.dept_no = departments.dept_no
+        JOIN titles ON employees.emp_no = titles.emp_no
     WHERE employees.emp_no = $id";
     $result = mysqli_query($employeesDB, $query);
     return mysqli_fetch_assoc($result);
