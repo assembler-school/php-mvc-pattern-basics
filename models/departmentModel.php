@@ -1,33 +1,32 @@
 <?php
 
-function getEmployees(){
-  //Connection to the database;
+function getDepartments() {
   $dbConnection = mysqli_connect("localhost", "nacho", "75718647w", "employees");
 
-  $query = "SELECT * FROM employees";
+  $query = "SELECT * FROM departments";
   $result = mysqli_query($dbConnection, $query);
 
-  $employeesArray = array();
+  $departmentsArray = array();
 
   if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-      $employeesArray[] = $row;
+      $departmentsArray[] = $row;
     }
-    return $employeesArray;
+    return $departmentsArray;
   }
 }
 
-function getById($id){
+function getDeptById($id) {
   $dbConnection = mysqli_connect("localhost", "nacho", "75718647w", "employees");
 
-  $query = "SELECT * FROM employees WHERE emp_no = $id";
+  $query = "SELECT * FROM departments WHERE dept_no = '$id'";
   $result = mysqli_query($dbConnection, $query);
 
   if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-      $employee = $row;
+      $department = $row;
     }
-
-    return $employee;
+    var_dump($department);
+    return $department;
   }
 }
