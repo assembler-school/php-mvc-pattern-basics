@@ -3,16 +3,19 @@
 require_once MODELS . "employeeModel.php";
 
 //OBTAIN THE ACCION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
+$action = $_GET["action"];
+// $id = $_GET["id"];
 
-//Keep in mind that the function to be executed has to be one of the ones declared in this controller
-// TODO Implement the logic
+if (function_exists($action)) {
+    list($params) = [
+        "getAllEmployees" => [[]],
+        // "getEmployee" => [$id],
+    ][$action] ?? [[]];
 
-switch ($_GET["action"]) {
-    case "getAllEmployees":
-        getAllEmployees();
-        break;
-    default:
-        break;
+    call_user_func($action, $params);
+} else {
+    error("Invalid function");
+    exit;
 }
 
 

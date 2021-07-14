@@ -10,7 +10,7 @@
       <h5>Salary</h5>
     </div>
     <div class="col-2 text-center border">
-      <h5>From datee</h5>
+      <h5>From date</h5>
     </div>
     <div class="col-2 text-center border">
       <h5>To date</h5>
