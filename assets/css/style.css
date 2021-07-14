@@ -12,17 +12,31 @@ body {
 }
 
 .main-title {
-  color: blue;
   margin-bottom: 30px;
 }
 
-a {
+a,
+a:hover {
   color: black;
 }
 
 /* Dashboard */
 .delete-icon {
   color: rgb(196, 12, 12);
+}
+
+/* Cells */
+th {
+  padding: 10px 0 10px 10px;
+}
+
+td {
+  padding: 10px;
+}
+
+tbody > tr:hover {
+  background-color: rgb(240, 240, 240);
+  transition: 0.4s;
 }
 
 /* Employee / Deparment */

@@ -15,7 +15,7 @@ switch ($_GET["action"]) {
         getEmployee($_GET["id"]);
         break;
     default:
-        echo "Not valid action";
+        error("Not valid action");
         break;
 }
 
@@ -44,5 +44,6 @@ function getEmployee($request)
  */
 function error($errorMsg)
 {
+    $errorMessage = $errorMsg;
     require_once VIEWS . "/error/error.php";
 }

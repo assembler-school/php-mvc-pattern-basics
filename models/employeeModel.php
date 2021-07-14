@@ -17,7 +17,6 @@ function getEmployees()
             array_push($employeesArray, $row);
         }
     }
-
     // Return the employees' array
     return $employeesArray;
 }

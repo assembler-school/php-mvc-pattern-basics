@@ -1,44 +1,41 @@
-<h1 class='main-title'><?= $employee["first_name"] ?> form</h1>
+<?php
+$page = "Employee form";
+require_once VIEWS . "head/head.php"
+?>
 
-<form class="w-50">
-    <div class="form-row">
-        <div class="form-group col-12">
+<body>
+    <h1 class='main-title'><?= $employee["first_name"] ?>'s form</h1>
+
+    <form class="w-50">
+        <div class="form-group mb-3 p-0">
             <label for="inputEmail4">Name</label>
-            <input type="text" class="form-control" id="inputName" value="<?= $employee["first_name"] ?>" placeholder="Email">
+            <input type="text" class="form-control" id="inputName" value="<?= $employee["first_name"] ?>" placeholder="Name">
         </div>
-        <div class="form-group col-12">
+        <div class="form-group mb-3 p-0">
             <label for="inputPassword4">Last name</label>
-            <input type="text" class="form-control" id="inputLastName" value="<?= $employee["last_name"] ?>" placeholder="Password">
+            <input type="text" class="form-control" id="inputLastName" value="<?= $employee["last_name"] ?>" placeholder="Last name">
         </div>
-    </div>
-    <div class="form-group">
-        <label for="inputAddress">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-    <div class="form-group">
-        <label for="inputAddress2">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
+        <div class="form-group mb-3 p-0">
+            <label for="inputAddress">Birthday</label>
+            <input type="date" class="form-control" id="inputBirthday" value="<?= $employee["birth_date"] ?>" placeholder="DD/MM/YYYY">
         </div>
-        <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
+        <div class="form-group mb-3 p-0">
+            <label for="inputHiringDate">Hiring date</label>
+            <input type="date" class="form-control" id="inputHiringDate" value="<?= $employee["hire_date"] ?>" placeholder="DD/MM/YYYY" disabled>
+        </div>
+        <div class="form-group mb-3 p-0">
+            <label class="w-100" for="genderSelect">Gender</label>
+            <select class="form-control" id="genderSelect">
+                <option hidden selected><?= $employee["gender"] ?></option>
+                <option value="M">M</option>
+                <option value="F">F</option>
             </select>
         </div>
-        <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
+
+        <div class="d-flex container-fluid p-0 mt-4">
+            <button type="submit" class="btn btn-dark mr-2">Update</button>
+            <!-- Back to dashboard -->
+            <a href="./index.php?controller=employees&action=getAllEmployees" class='btn btn-outline-secondary '>Back</a>
         </div>
-    </div>
-    <div class="d-flex container-fluid p-0">
-        <button type="submit" class="btn btn-primary">Sign in</button>
-        <!-- Back home -->
-        <a href="./index.php" class='btn btn-outline-secondary '>Home</a>
-    </div>
-</form>
+    </form>
+</body>

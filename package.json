@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/Ricard-Garcia/php-mvc-pattern-basics#readme",
   "dependencies": {
-    "bootstrap": "^5.0.2"
+    "bootstrap": "^4.6.0"
   }
 }
