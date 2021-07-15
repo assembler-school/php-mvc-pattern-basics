@@ -1,103 +1,120 @@
-# MVC Pattern Basics
+`#html` `#css` `#js` `#php` `#basics` `#master-in-software-engineering`
 
-This is a pill cretaed to learn how the architecture of MVC pattern works
+# PHP MVC Basic Patterns<!-- omit in toc -->
 
-## Comenzando 🚀
+> This is a pill cretaed to learn how the architecture of MVC pattern works as a part of the Master in Software Development by Assembler School of Software Engineering.
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+### Main objetives:
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+- Understand what it is an architecture pattern, what it is used for, and what advantages it can bring to the project
+- Learn to implement the MVC pattern
+- Learn more about the use of this pattern for future implementations in
+  popular Working Frameworks
 
-### Pre-requisitos 📋
+## Index <!-- omit in toc -->
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+- [Starting 🚀](#starting-)
+- [Theory 📚](#theory-)
+  - [Requirements📋](#requirements)
+  - [Main page](#main-page)
+  - [Employees dashboard page](#employees-dashboard-page)
+    - [Employee details page](#employee-details-page)
+  - [Departments dashboard Page](#departments-dashboard-page)
+    - [Department details page](#department-details-page)
+- [Project structure 📁](#project-structure-)
+- [Tools and tecnologies used 🛠️](#tools-and-tecnologies-used-️)
+- [Project requirements 📏](#project-requirements-)
+- [Resources](#resources)
+
+## Starting 🚀
+
+_In order to view the application running on a browser, you should follow this steps:_
+
+1. Download a copy of this repo or fork it.
+2. Open a local server environment such as MAMP or XAMPP.
+3. In order to use the database, you should _source_ the _employees.sql_ database.
+4. On config/db.php you should set your user's credentials you've stablished on your local server.
+
+## Theory 📚
+
+1.  **What is an architecture pattern?**
+    It is a general, reusable solution to a commonly occurring problem in software architecture within a given context. The architectural patterns address various issues in software engineering, such as computer hardware performance limitations, high availability and minimization of a business risk.
+
+2.  **What is the MVC pattern?**
+    MVC is a software architectural pattern for implementing user interfaces on computers. It divides a given application into three interconnected parts, the Model, View and Controller (MVC).
+
+- Model: the classes and methods that interact with the database.
+- View: it has to display the data to the client, so its understandable and easy to read.
+- Controller: it is the intermediary beetwen the view and the model, which manages the user interactions with the view, requests the data to the model and returns this data to the view.
+
+4.  **Draw a scheme where you understand that the MVC pattern is clearly**
+    ![enter image description here](https://www.freecodecamp.org/news/content/images/2021/04/MVC3.png)
+5.  **Explain in which cases you would use this pattern**
+    It can be useful in many cases, specially when we have in mind the scalability of a project.
+6.  **Describe step by step what happens in this pattern from when you create a Request until a Response is returned (you can give more than one example if you consider it necessary)**
+    First, the client sends a request to the controller, interacting with the view. Then, the controller requests the data to the model, which returns that data. The data is sent to the view by the controller that finally renders what's the user has asked for.
+7.  **What advantages do you think this pattern has to use?**
+    The main advantage of architecture is reusability, security and increasing the performance of application.
+
+### Requirements📋
+
+To run this project you need yo have a local server environment installed in your computer. Such as MAMP or XAMPP. View more info on [MAMP's website](https://www.mamp.info/en/).
+
+### Main page
+
+Here we can choose which controller to use: Employees or Departments.
+
+### Employees dashboard page
+
+Here we can see all the employees of the database, with their main information. We can also view more details of the employee by clicking on the blue button or delete an employee by clicking on the red one.
+
+#### Employee details page
+
+Here you can see **all** the details of the selected employee.
+
+### Departments dashboard Page
+
+Here you can see a list of all the company's departments.
+
+#### Department details page
+
+By clicking on the blue button you can view a form to edit the department's info.
+
+## Project structure 📁
 
 ```
-Da un ejemplo
+assets/
+config/
+controllers/
+models/
+resources/
+views/
 ```
 
-### Instalación 🔧
+## Tools and tecnologies used 🛠️
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+- PHP
+- HTML
+- Bootstrap
+- MySQL
 
-_Dí cómo será ese paso_
+## Project requirements 📏
 
-```
-Da un ejemplo
-```
+- All code included comments need to be write in English
+- Use a code style like camelCase
+- HTML never use inline styles
+- It is recommended to divide the tasks into several subtasks so that you can associate each particular step of the construction with a specific commit
+- You should try as much as possible that the commits and planned tasks are the same
+- You must create a correctly documented README.md file in the root directory of the project (see guidelines in Resources)
 
-_Y repite_
+## Resources
 
-```
-hasta finalizar
-```
+- [What can PHP do?](https://www.php.net/manual/es/intro-whatcando.php)
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+- [MAMP](<(https://www.mamp.info/en/).>)
 
-## Ejecutando las pruebas ⚙️
+- [How to install XAMPP on Windows](https://www.youtube.com/watch?v=h6DEDm7C37A)
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
+- [What is a web server?](https://www.youtube.com/watch?v=Yt1nesKi5Ec)
 
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
-
-## Construido con 🛠️
-
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-- [Maven](https://maven.apache.org/) - Manejador de dependencias
-- [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
-
-## Autores ✒️
-
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
-- **Andrés Villanueva** - _Trabajo Inicial_ - [villanuevand](https://github.com/villanuevand)
-- **Fulanito Detal** - _Documentación_ - [fulanitodetal](#fulanito-de-tal)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto.
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
-
-## Expresiones de Gratitud 🎁
-
-- Comenta a otros sobre este proyecto 📢
-- Invita una cerveza 🍺 o un café ☕ a alguien del equipo.
-- Da las gracias públicamente 🤓.
-- etc.
-
----
-
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
+- [Web server basics](https://www.youtube.com/watch?v=3VqfpVKvlxQ)
