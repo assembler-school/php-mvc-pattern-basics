@@ -1,5 +1,8 @@
 <?php
 
+
+BASE_PATH = "/c/xampp/htdocs/php-mvc-pattern-basics";
+
 //CONTROLLERS
 define("CONTROLLERS", BASE_PATH . '/controllers/');
 
