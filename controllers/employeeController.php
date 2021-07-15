@@ -45,6 +45,15 @@ function addEmployee()
         error("Couldn't add the employee to the database");
     }
 }
+
+function deleteEmployee()
+{
+    if (delete($_GET['empId'])) {
+        header('location:?controller=employee&action=getAllEmployees');
+    } else {
+        error("Couldn't delete the employee to the database");
+    }
+}
 /**
  * This function includes the error view with a message
  */
