@@ -51,7 +51,11 @@ function getDepartment($get)
 /**
  * This function calls the corresponding model function and includes the corresponding view
  */
-
+function updateDepartment($request)
+{
+    updateById($request);
+    header("Location:./index.php?controller=departments&action=getAllDepartments");
+}
 
 /**
  * This function includes the error view with a message

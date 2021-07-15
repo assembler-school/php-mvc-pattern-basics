@@ -100,3 +100,18 @@ function getById($id)
 
     return $allData;
 }
+
+function updateById($request)
+{
+    // Connection to Database
+    require CONFIG . "db.php";
+
+    $query = "UPDATE departments
+        SET
+            dept_no = '$request[inputDeptId]',
+            dept_name = '$request[inputDeptName]'
+        WHERE
+            dept_no = '$request[inputDeptId]'";
+
+    mysqli_query($employeesDB, $query);
+}
