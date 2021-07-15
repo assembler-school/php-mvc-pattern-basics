@@ -46,8 +46,8 @@
                     echo " <td data-id='$id' class='toForm' >" . $gender . "</td>";
 
                     echo "<td> 
-                    <a class='btn btn-secondary' href='?controller=employee&action=getEmployee&id=" . $employee[0] . "'>Edit</a>
-                    <a class='btn btn-danger' href='?controller=employee&action=deleteEmployee&id=" . $employee[0] . "'>Delete</a>
+                    <a class='btn btn-secondary' href='?controller=employee&action=getEmployee&id=" . $id . "'>Edit</a>
+                    <a class='btn btn-danger' href='?controller=employee&action=deleteEmployee&id=" . $id . "'>Delete</a>
 
                     </td>";
                     echo "</tr>";
