@@ -46,6 +46,15 @@ function getEmployee($get)
 }
 
 /**
+ * This function calls the corresponding model function and includes the corresponding view
+ */
+function updateEmployee($request)
+{
+    updateById($request);
+    header("Location:./index.php?controller=employees&action=getAllEmployees");
+}
+
+/**
  * This function includes the error view with a message
  */
 function error($errorMsg)

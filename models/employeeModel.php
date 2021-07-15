@@ -35,3 +35,21 @@ function getById($id)
         }
     }
 }
+
+function updateById($request)
+{
+    // Connection to Database
+    require CONFIG . "db.php";
+
+    $query = "UPDATE employees
+        SET
+            first_name = '$request[inputName]',
+            last_name = '$request[inputLastName]',
+            birth_date = '$request[inputBirthday]',
+            gender = '$request[genderSelect]'
+        WHERE
+            emp_no = '$request[id]'
+    ";
+
+    mysqli_query($employeesDB, $query);
+}
