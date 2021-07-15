@@ -2,22 +2,11 @@
 
 require_once MODELS . "departmentModel.php";
 
-switch ($_GET['action']) {
-  case "getAllDepartments":
-      getAllDepartments();
-      break;
-  case "getDepartment":
-      $request = $_GET['id'];
-      getDepartment($request);
-      break;
-  case "updateDepartment":
-        $request = $_GET['id'];
-        updateDepartment($request);
-        break;
-  default:
-      $errorMsg = "You can't make this on the departments";
-      error($errorMsg);
-      break;
+if (function_exists($_GET['action'])) {
+    call_user_func($_GET['action']);
+}  else {
+    $errorMsg = "You can't make this on the departments";
+    error($errorMsg);
 }
 
 function getAllDepartments()
@@ -26,13 +15,13 @@ function getAllDepartments()
     require_once VIEWS . "department/departmentDashboard.php";
 }
 
-function getDepartment($request) {
-  $department = getDeptById($request);
+function getDepartment() {
+  $department = getDeptById($_GET['id']);
   require_once VIEWS . "department/department.php";
 }
 
-function updateDepartment($request) {
-    updateById($request, $_POST);
+function updateDepartment() {
+    updateById($_GET['id'], $_POST);
     header('Location: ./index.php?controller=departments&action=getAllDepartments');
 }
 
