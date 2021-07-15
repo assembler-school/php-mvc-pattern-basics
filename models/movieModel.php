@@ -46,17 +46,13 @@ function newMovie($request)
     }
 }
 
-function updateMovie($request)
+function update($request)
 {
     try {
         $dbConst = mysqli_connect(DB_HOST, USER_NAME, DB_PASSWORD, DB_NAME);
-        $checkMovie = mysqli_query($dbConst, "SELECT * FROM movies WHERE movie_id = '$request[movie_id]'");
-        if (mysqli_num_rows($checkMovie) == 0) {
-            return "Movie does not exist!";
-        } else {
-            mysqli_query($dbConst, "UPDATE movies SET movie_name = '$request[movie_name]', released_year = '$request[released_year]', runtime = '$request[runtime]'");
-            return "Updated successfully!";
-        }
+        mysqli_query($dbConst, "UPDATE movies SET movie_name = '$request[movie_name]', released_year = '$request[released_year]', runtime = '$request[runtime]' 
+        WHERE movie_id = '$request[movie_id]';");
+        return "Updated successfully!";
     } catch (Exception $e) {
         return $e->getMessage();
     }

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <h1>movies</h1>
+    <h1>Movies</h1>
     <table class="table">
         <thead>
             <tr>
@@ -32,7 +32,7 @@
                 echo "<td>" . $movie[3] . "</td>";
                 echo "<td> 
                 <a class='btn btn-secondary' href='?controller=movie&action=getMovie&id=" . $movie[0] . "'>Edit</a>
-                <a class='btn btn-danger' href='?controller=movie&action=deleteMovieById&id=" . $movie[0] . "'>Delete</a>
+                <a class='btn btn-danger' href='?controller=movie&action=deleteMovie&id=" . $movie[0] . "'>Delete</a>
                 </td>";
                 echo "</tr>";
             }

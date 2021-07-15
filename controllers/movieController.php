@@ -30,48 +30,48 @@ function getAllMovies()
  */
 function getMovie($request)
 {
-    $movie = getMovieById($request["movie_id"]);
+    $movie = getMovieById($request["id"]);
     require_once VIEWS . "/movie/movie.php";
 }
 
-// function createMovie($request)
-// {
-//     require_once MODELS . "movieModel.php";
-//     if ($msg = newMovie($request)) {
-//         header("Location: index.php?controller=movie&action=getAllMovies&msg=$msg");
-//     } else {
-//         error("Parameter Error");
-//     }
-// }
+function createMovie($request)
+{
+    require_once MODELS . "movieModel.php";
+    if ($msg = newMovie($request)) {
+        header("Location: index.php?controller=movie&action=getAllMovies&msg=$msg");
+    } else {
+        error("Parameter Error");
+    }
+}
 
-// function updateMovie($request)
-// {
-//     if (isset($request["movie_id"])) {
-//         require_once MODELS . "movieModel.php";
-//         if ($msg = updateMovie($request)) {
-//             header("Location: index.php?controller=movie&action=getAllMovies&msg=$msg");
-//         } else {
-//             error("Database Connection Error");
-//         }
-//     } else {
-//         error("Parameter Error");
-//     }
-// }
+function updateMovie($request)
+{
+    if (isset($request["movie_id"])) {
+        require_once MODELS . "movieModel.php";
+        if ($msg = update($request)) {
+            header("Location: index.php?controller=movie&action=getAllMovies&msg=$msg");
+        } else {
+            error("Database connection error");
+        }
+    } else {
+        error("Error");
+    }
+}
 
-// function deleteMovie($request)
-// {
-//     require_once MODELS . "movieModel.php";
-//     if (isset($request["id"])) {
-//         if ($msg = deleteMovieById($request["id"])) {
-//             deleteMovieById($request["id"]);
-//             header("Location: index.php?controller=movie&action=getAllMovies&id=$msg");
-//         } else {
-//             error("Database Connection Error");
-//         }
-//     } else {
-//         error("Parameter Error");
-//     }
-// }
+function deleteMovie($request)
+{
+    require_once MODELS . "movieModel.php";
+    if (isset($request["id"])) {
+        if ($msg = deleteMovieById($request["id"])) {
+            deleteMovieById($request["id"]);
+            header("Location: index.php?controller=movie&action=getAllMovies&msg=$msg");
+        } else {
+            error("Database Connection Error");
+        }
+    } else {
+        error("Parameter Error");
+    }
+}
 /**
  * This function includes the error view with a message
  */
