@@ -29,18 +29,18 @@ function getEmployeeById($id)
     }
 }
 
-function createEmployee($employee)
+function createEmployee($request)
 {
     try {
         $dbConst = mysqli_connect(DB_HOST, USER_NAME, DB_PASSWORD, DB_NAME);
-        $newEmployee = mysqli_query($dbConst, "SELECT * FROM employees WHERE first_name = '$employee[first_name]' AND last_name = '$employee[last_name]' AND gender = '$employee[gender]' AND age = '$employee[age]'");
+        $newEmployee = mysqli_query($dbConst, "SELECT * FROM employees WHERE first_name = '$request[first_name]' AND last_name = '$request[last_name]' AND gender = '$request[gender]' AND age = '$request[age]'");
         if (mysqli_num_rows($newEmployee) > 0) {
             return "Employee already exists";
         } else {
             mysqli_query(
                 $dbConst,
                 "INSERT INTO employees (first_name, last_name, gender, age) 
-                VALUES ('$employee[first_name]', '$employee[last_name]', '$employee[gender]', '$employee[age]');
+                VALUES ('$request[first_name]', '$request[last_name]', '$request[gender]', '$request[age]');
                 "
             );
             return "New employee created successfully!";
@@ -50,15 +50,15 @@ function createEmployee($employee)
     }
 }
 
-function updateEmployee($employee)
+function updateEmployee($request)
 {
     try {
         $dbConst = mysqli_connect(DB_HOST, USER_NAME, DB_PASSWORD, DB_NAME);
-        $checkEmployee = mysqli_query($dbConst, "SELECT * FROM employees WHERE id = '$employee[id]'");
+        $checkEmployee = mysqli_query($dbConst, "SELECT * FROM employees WHERE emp_id = '$request[emp_id]'");
         if (mysqli_num_rows($checkEmployee) == 0) {
             return "Employee does not exist!";
         } else {
-            mysqli_query($dbConst, "UPDATE employees SET first_name = '$employee[first_name]', last_name = '$employee[last_name]', gender = '$employee[gender]', age = '$employee[age]'");
+            mysqli_query($dbConst, "UPDATE employees SET first_name = '$request[first_name]', last_name = '$request[last_name]', gender = '$request[gender]', age = '$request[age]'");
             return "Updated successfully!";
         }
     } catch (Exception $e) {

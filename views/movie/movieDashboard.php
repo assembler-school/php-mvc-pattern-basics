@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
     <title>Document</title>
 </head>
 
@@ -30,7 +32,7 @@
                 echo "<td>" . $movie[3] . "</td>";
                 echo "<td> 
                 <a class='btn btn-secondary' href='?controller=movie&action=getMovie&id=" . $movie[0] . "'>Edit</a>
-                <a class='btn btn-danger' href='?controller=movie&action=deleteMovie&id=" . $movie[0] . "'>Delete</a>
+                <a class='btn btn-danger' href='?controller=movie&action=deleteMovieById&id=" . $movie[0] . "'>Delete</a>
                 </td>";
                 echo "</tr>";
             }
