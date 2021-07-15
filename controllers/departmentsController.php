@@ -53,7 +53,13 @@ function getDepartment($get)
  */
 function updateDepartment($request)
 {
-    updateById($request);
+    updateDepartmentModel($request);
+    header("Location:./index.php?controller=departments&action=getAllDepartments");
+}
+
+function deleteDepartment($get)
+{
+    deleteDepartmentModel($get["id"]);
     header("Location:./index.php?controller=departments&action=getAllDepartments");
 }
 

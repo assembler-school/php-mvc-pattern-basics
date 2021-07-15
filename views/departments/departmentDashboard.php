@@ -26,8 +26,8 @@ require_once VIEWS . "head/head.php"
                     <td><?php echo $department["num-employees"] ?></td>
                     <td><?php echo number_format($department["total-expenses"], 0, ",", ".") ?> €</td>
                     <td><?php echo $department["manager"] ?></td>
-                    <td class=" text-center"><a href="./index.php?controller=departments&action=getDepartment&id=<?php echo $department["dept_no"] ?>"><i class="uil uil-edit"></i></a></td>
-                    <td class="text-center"><i class="uil uil-trash-alt delete-icon"></i></td>
+                    <td class="text-center"><a href="./index.php?controller=departments&action=getDepartment&id=<?php echo $department["dept_no"] ?>"><i class="uil uil-edit"></i></a></td>
+                    <td class="text-center"><a href="./index.php?controller=departments&action=deleteDepartment&id=<?php echo $department["dept_no"] ?>"><i class="uil uil-trash-alt delete-icon"></i></a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

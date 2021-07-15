@@ -50,7 +50,16 @@ function getEmployee($get)
  */
 function updateEmployee($request)
 {
-    updateById($request);
+    updateEmployeeModel($request);
+    header("Location:./index.php?controller=employees&action=getAllEmployees");
+}
+
+/**
+ * This function calls the corresponding model function and includes the corresponding view
+ */
+function deleteEmployee($get)
+{
+    deleteEmployeeModel($get["id"]);
     header("Location:./index.php?controller=employees&action=getAllEmployees");
 }
 

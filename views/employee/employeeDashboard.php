@@ -29,7 +29,7 @@ require_once VIEWS . "head/head.php"
                     <td><?php echo $employee["hire_date"] ?></td>
                     <td><?php echo $employee["gender"] ?></td>
                     <td class=" text-center"><a href="./index.php?controller=employees&action=getEmployee&id=<?php echo $employee["emp_no"] ?>"><i class="uil uil-edit"></i></a></td>
-                    <td class="text-center"><i class="uil uil-trash-alt delete-icon"></i></td>
+                    <td class="text-center"><a href="./index.php?controller=employees&action=deleteEmployee&id=<?php echo $employee["emp_no"] ?>"><i class="uil uil-trash-alt delete-icon"></i></a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

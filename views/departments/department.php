@@ -9,7 +9,7 @@ require_once VIEWS . "head/head.php";
     <form class="w-50" method="POST" action="./index.php?controller=departments&action=updateDepartment&id=<?= $departmentData["dept_no"] ?>">
         <div class="form-group mb-3 p-0">
             <label for="inputDeptId">Department's id</label>
-            <input type="text" class="form-control" id="inputDeptId" name="inputDeptId" value="<?= $departmentData["dept_no"] ?>" placeholder="Id" maxlength="4">
+            <input type="text" class="form-control" id="inputDeptId" name="inputDeptId" value="<?= $departmentData["dept_no"] ?>" placeholder="Id" maxlength="4" disabled>
         </div>
         <div class="form-group mb-3 p-0">
             <label for="inputDeptName">Department's name</label>

@@ -101,17 +101,27 @@ function getById($id)
     return $allData;
 }
 
-function updateById($request)
+function updateDepartmentModel($request)
 {
     // Connection to Database
     require CONFIG . "db.php";
 
     $query = "UPDATE departments
         SET
-            dept_no = '$request[inputDeptId]',
             dept_name = '$request[inputDeptName]'
         WHERE
-            dept_no = '$request[inputDeptId]'";
+            dept_no = '$request[id]'";
+
+    mysqli_query($employeesDB, $query);
+}
+
+
+function deleteDepartmentModel($id)
+{
+    // Connection to Database
+    require CONFIG . "db.php";
+
+    $query = "DELETE FROM departments WHERE dept_no = '$id'";
 
     mysqli_query($employeesDB, $query);
 }

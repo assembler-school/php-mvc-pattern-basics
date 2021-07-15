@@ -36,7 +36,7 @@ function getById($id)
     }
 }
 
-function updateById($request)
+function updateEmployeeModel($request)
 {
     // Connection to Database
     require CONFIG . "db.php";
@@ -50,6 +50,16 @@ function updateById($request)
         WHERE
             emp_no = '$request[id]'
     ";
+
+    mysqli_query($employeesDB, $query);
+}
+
+function deleteEmployeeModel($id)
+{
+    // Connection to Database
+    require CONFIG . "db.php";
+
+    $query = "DELETE FROM employees WHERE emp_no = $id";
 
     mysqli_query($employeesDB, $query);
 }
