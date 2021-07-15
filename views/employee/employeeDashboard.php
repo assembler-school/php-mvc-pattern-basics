@@ -1,9 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/utils.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Employee Dashboard</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
 <?php
+require_once("./config/helper.php");
+
+
 if (empty($employees)) {
-    echo '<br> array is empty <br>'; //expected result
+    debug_to_console("NOT OK - You are NOT grabing data correctly from the controller and displaying it in the View (Employee-EmployeeDashboard)");
 } else {
-    echo '<br> array is not empty <br>'; //unexpected result
+    debug_to_console("OK - You are grabing data correctly from the controller and displaying it in the View (Employee-EmployeeDashboard)");
 }
 echo "<h2 class='title-header'>Employee Dashboard</h2>
 
@@ -45,4 +66,6 @@ array_walk(
 echo   "</tbody>
             </table>
             </div>";
+
+
 ?>
