@@ -4,7 +4,7 @@
 DROP DATABASE IF EXISTS products;
 DROP DATABASE IF EXISTS productsDB;
 CREATE DATABASE IF NOT EXISTS productsDB;
-USE products;
+USE productsDB;
 
 DROP TABLE IF EXISTS products;
                     --  burgers,
