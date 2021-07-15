@@ -68,7 +68,7 @@ you consider it necessary).**
 
 This directory strcuture establishes the basic archictecture in which the MVC pattern will be exectued in this project.
 
-```bash
+```
 
 repo
  ├── node_modules
