@@ -21,11 +21,12 @@
 
         $data = getAllEmployeesModel();
 
-        // Choosing view depending on if $data is empty
-        if(!empty($data)){
+        // Choosing view depending on if  
+        // $data is empty and not a string
+        if(!empty($data) && getType($data)!== "string"){
             require_once VIEWS."employee/employeeDashboard.php";
         }else{
-            require_once VIEWS."error/error.php";
+            error($data);
         }
         
     }
@@ -37,11 +38,12 @@
         // Get specific travel details
         $data = getEmployeeByIdModel();
         
-        // Choosing view depending on if $data is empty
-        if(!empty($data)){
+        // Choosing view depending on if  
+        // $data is empty and not a string
+        if(!empty($data) && getType($data)!== "string"){
             require_once VIEWS."employee/employeeDashboard.php";
         }else{
-            require_once VIEWS."error/error.php";
+            error($data);
         }
     }
 
@@ -49,15 +51,17 @@
     function deleteEmployeeByIdController(){
         
         // Delete specific travel
-        deleteEmployeeByIdModel();
+        $data = deleteEmployeeByIdModel();
         
-        // Reload all remaining travels
-        header("Location: ?controller=employees&action=getAllEmployeesController");
+        if($data === true){
+            // Reload all remaining employees
+            header("Location: ?controller=employees&action=getAllEmployeesController");
+        }else{
+            error($data);
+        }
     }
 
-    /**
-     * This function includes the error view with a message
-     */
+    
     function error($errorMsg)
     {
         require_once VIEWS . "/error/error.php";

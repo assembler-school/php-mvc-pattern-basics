@@ -10,13 +10,13 @@
 
         $data = getAllTravelsModel();
         
-        // Choosing view depending on if $data is empty
+        // Choosing view depending on if 
+        // $data is empty and not a string
         if(!empty($data) && gettype($data)!== "string"){
             require_once VIEWS."travel/travelDashboard.php";
         }else{
             error($data);
         }
-        
     }
 
     // Get an specific travel by its id and 

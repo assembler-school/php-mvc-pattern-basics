@@ -1,13 +1,7 @@
 <?php
 
-    // Check connection
-    // if ($conn->connect_error) {
-    //     die("Connection failed: " . $conn->connect_error);
-    // }
-
     // Model FUNCTIONS
 
-    // Receives the database connection and returns all employees
     function getAllEmployeesModel(){
         
         // Require database Connection
@@ -17,12 +11,21 @@
         $sql = "SELECT * FROM employees";
         $resultQuery = mysqli_query($conn,$sql);
 
+        // Closing database connection
+        mysqli_close($conn);
+
         // Creating empty array to store result
         $result = array();
         if (mysqli_num_rows($resultQuery) > 0) {
             while ($row = mysqli_fetch_assoc($resultQuery)) {
                 array_push($result,$row);
             }
+
+            // Return $result
+            return $result;
+        }else{
+            // Return error message
+            return "Employees table is empty or does not exist";
         }
 
         // Return $result
@@ -40,19 +43,24 @@
         $sql = "SELECT * FROM employees WHERE emp_no=".$id;
         $resultQuery = mysqli_query($conn,$sql);
 
+        // Closing database connection
+        mysqli_close($conn);
+
         // Creating empty array to store result
         $result = array();
         if (mysqli_num_rows($resultQuery) > 0) {
             while ($row = mysqli_fetch_assoc($resultQuery)) {
                 array_push($result,$row);
             }
+
+            // Return $result
+            return $result;
+        }else{
+
+            // Return error message
+            return "Employee ".$id." does not exist";
         }
 
-        // Closing database connection
-        mysqli_close($conn);
-
-        // Return $result
-        return $result;
     }
 
     function deleteEmployeeByIdModel(){
@@ -66,8 +74,17 @@
         $sql = "DELETE FROM employees WHERE emp_no=".$id;
         mysqli_query($conn,$sql);
 
+        // Check affected rows
+        $affectedRows = mysqli_affected_rows($conn);
+
         // Closing database connection
         mysqli_close($conn);
+
+        if($affectedRows > 0){
+            return true;
+        }else{
+            return "Employee ".$id." has already been deleted or does not exist";
+        }
     }
 
 ?>
