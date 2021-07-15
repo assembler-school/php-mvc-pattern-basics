@@ -10,12 +10,14 @@
 </head>
 
 <body>
+    <?php
+
+    require_once("./config/helper.php");
+
+    debug_to_console("OK - EXECUTED View employee Dashboard");
+
+
+    ?>
 </body>
 
 </html>
-
-<?php
-require_once("./config/helper.php");
-debug_to_console("Test555");
-echo "IM THE employee VIEW";
-?>
