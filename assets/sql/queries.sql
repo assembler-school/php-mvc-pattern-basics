@@ -33,18 +33,20 @@ FROM employees
     JOIN departments ON departments.dept_no = dept_emp.dept_no;
 
 
--- Get all expenses in salaries for each department
+-- Get id, name, expenses, manager for each department
 SELECT
     departments.dept_no,
     departments.dept_name,
+    CONCAT(employees.first_name, ' ', employees.last_name) AS "Manager",
     COUNT(dept_emp.emp_no) as 'num-employees',
     SUM(salaries.salary) as 'total-expenses'
 FROM
     departments
     JOIN dept_emp ON departments.dept_no = dept_emp.dept_no
     JOIN salaries ON salaries.emp_no = dept_emp.emp_no
-GROUP BY departments.dept_no;
-
+    JOIN dept_manager ON dept_manager.dept_no = departments.dept_no
+    LEFT JOIN employees ON employees.emp_no = dept_manager.emp_no
+GROUP BY departments.dept_no, departments.dept_name, CONCAT(employees.first_name, ' ', employees.last_name);
 
 -- Get all expenses in one department
 SELECT
