@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Document</title>
 </head>
 
 <body>
-    <a class="btn btn-primary stretched-link" href="index.php">GO BACK</a>
-    <h1>Movie</h1>
-
-
+    <h1 class="ml-3"><?php echo isset($movie) ?  "Edit Movie" : "New Movie" ?></h1>
     <form class="w-50 m-auto" action="index.php?controller=movie&action=<?php echo isset($movie[0][0]) ? "updateMovie" : "createMovie" ?>" method="post">
         <input type="hidden" name="movie_id" value="<?php echo isset($movie[0][0]) ? $movie[0][0] : null ?>">
         <div class="form-group row md-6">
@@ -28,8 +26,9 @@
             <label for="runtime">Running time</label>
             <input required type="text" class="form-control" value="<?php echo isset($movie) ? $movie[0][3] : null ?>" class="form-control" id="runtime" name="runtime" aria-describedby="runtime" placeholder="Enter movie name">
         </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group row md-6 justify-content-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
 </body>
 

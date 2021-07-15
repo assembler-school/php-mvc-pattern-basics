@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <a class="btn btn-primary stretched-link m-3" href="index.php">GO BACK</a>
     <h1 class="ml-3">Employees</h1>
     <table class="table">
         <thead>
