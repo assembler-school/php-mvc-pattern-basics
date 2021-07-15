@@ -1,10 +1,9 @@
 -- mysql -u root -p employee < C:\xampp\htdocs\DB\mysql-basics\employees.sql
 -- source C:\xampp\htdocs\php-mvc-pattern-basics\resources\productsDB.sql
 
-DROP DATABASE IF EXISTS products;
-DROP DATABASE IF EXISTS productsDB;
-CREATE DATABASE IF NOT EXISTS productsDB;
-USE productsDB;
+DROP DATABASE IF EXISTS productsdb;
+CREATE DATABASE IF NOT EXISTS productsdb;
+USE productsdb;
 
 DROP TABLE IF EXISTS products;
                     --  burgers,
@@ -18,6 +17,7 @@ CREATE TABLE products (
     prod_id INT NOT NULL AUTO_INCREMENT,
     prod_name CHAR(30) NOT NULL,
     prod_price FLOAT  NOT NULL,
+    prod_state ENUM ('available','not_available')  NOT NULL,
     PRIMARY KEY (prod_id)
 );
 

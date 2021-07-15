@@ -2,8 +2,12 @@
 function displayProductsList($productsList)
 {
 
-    echo "<h1>Product list</h1>";
-    echo "<p>" . $productsList . "</p>";
+    echo "<h1>Products list</h1>";
+    echo "<ul>";
+    foreach ($productsList as $product) {
+        echo "<li>" . implode($product) . "</li>";
+    }
+    echo "</ul>";
 }
 
 
