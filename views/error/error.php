@@ -12,8 +12,8 @@
 <body>
     <a class="btn btn-primary stretched-link" href="index.php">GO BACK</a>
     <?php
-    if (isset($errorMessage)) {
-        echo "<h3>" . $errorMessage . "</h3>";
+    if (isset($errorMsg)) {
+        echo "<h3>" . $errorMsg . "</h3>";
     }
     ?>
 </body>

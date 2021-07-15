@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
     <title>Document</title>
 </head>
 
 <body>
-    <h1>movies</h1>
+    <h1>Movies</h1>
     <table class="table">
         <thead>
             <tr>
