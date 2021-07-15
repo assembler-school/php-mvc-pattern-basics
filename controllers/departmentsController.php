@@ -2,10 +2,6 @@
 
 require_once MODELS . "departmentsModel.php";
 
-//OBTAIN THE ACCION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
-
-//Keep in mind that the function to be executed has to be one of the ones declared in this controller
-// TODO Implement the logic
 
 if (function_exists($action)) {
     call_user_func($action, $_REQUEST);
@@ -13,17 +9,6 @@ if (function_exists($action)) {
     error("Not valid action");
 }
 
-// switch ($_GET["action"]) {
-//     case "getAllDepartments":
-//         getAllDepartments();
-//         break;
-//     case "getDepartment":
-//         getDepartment($_GET["id"]);
-//         break;
-//     default:
-//         echo "Not valid action";
-//         break;
-// }
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
