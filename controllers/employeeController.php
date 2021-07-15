@@ -51,19 +51,45 @@ function getEmployee($request)
         debug_to_console("NOT OK - You are not calling correctly to the getEmployeeById function of the Controller");
     }
 }
-// function deleteEmployee($errorMsg)
-// print_r("TEWDCDSF");
-// {
-//     try {
-//         $deleteEmployee = deleteEmployee($_REQUEST['id']);
-//         require_once VIEWS . "/employee/employeeDashboard.php";
-//         debug_to_console("OK - You are calling correctly to the deleteEmployee function of the Controller");
-//     } catch (exception $e) {
-//         error($e->getMessage());
-//         debug_to_console("NOT OK - You are not calling correctly to the deleteEmployee function of the Controller");
-//     }
-// }
 
+function createEmployee($request)
+{
+    require_once MODELS . "employeeModel.php";
+    if ($msg = newEmployee($request)) {
+        header("Location: index.php?controller=employee&action=getAllEmpoyees&msg=$msg");
+    } else {
+        error("Parameter Error");
+    }
+}
+
+function updateEmployee($request)
+{
+    if (isset($request["movie_id"])) {
+        require_once MODELS . "employeeModel.php";
+        if ($msg = newupdateEmployee($request)) {
+            header("Location: index.php?controller=employee&action=getAllEmployees&msg=$msg");
+        } else {
+            error("Database connection error");
+        }
+    } else {
+        error("Error");
+    }
+}
+
+function deleteEmployee($request)
+{
+    require_once MODELS . "employeeModel.php";
+    if (isset($request["id"])) {
+        if ($msg = newdeleteEmployee($request["id"])) {
+            newdeleteEmployee($request["id"]);
+            header("Location: index.php?controller=employee&action=getAllEmployees&msg=$msg");
+        } else {
+            error("Database Connection Error");
+        }
+    } else {
+        error("Parameter Error");
+    }
+}
 
 /**
  * This function includes the error view with a message

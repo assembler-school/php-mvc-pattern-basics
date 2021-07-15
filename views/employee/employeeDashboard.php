@@ -22,7 +22,7 @@
                 <th>AGE</th>
                 <th>GENDER</th>
                 <?php
-                echo " <th><a class='btn btn-primary' href='?controller=employee&action=addEmployee&id=" . $employee[0] . "'>Add</a></th>";
+                echo " <th><a class='btn btn-primary' href='?controller=employee&action=createEmployee&id=" . $employee[0] . "'>Add</a></th>";
                 ?>
             </tr>
         </thead>

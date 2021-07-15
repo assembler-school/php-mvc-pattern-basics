@@ -30,7 +30,7 @@ function getEmployeeById($id)
     }
 }
 
-function createEmployee($request)
+function newEmployee($request)
 {
     try {
         $dbConst = mysqli_connect(DB_HOST, USER_NAME, DB_PASSWORD, DB_NAME);
@@ -51,7 +51,7 @@ function createEmployee($request)
     }
 }
 
-function updateEmployee($request)
+function newupdateEmployee($request)
 {
     try {
         $dbConst = mysqli_connect(DB_HOST, USER_NAME, DB_PASSWORD, DB_NAME);
@@ -67,7 +67,7 @@ function updateEmployee($request)
     }
 }
 
-function deleteEmployee($id)
+function newdeleteEmployee($id)
 {
     try {
         $dbConst = mysqli_connect(DB_HOST, USER_NAME, DB_PASSWORD, DB_NAME);
