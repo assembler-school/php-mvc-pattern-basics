@@ -51,7 +51,7 @@ function update($request)
     try {
         $dbConst = mysqli_connect(DB_HOST, USER_NAME, DB_PASSWORD, DB_NAME);
         mysqli_query($dbConst, "UPDATE movies SET movie_name = '$request[movie_name]', released_year = '$request[released_year]', runtime = '$request[runtime]' 
-        WHERE movie_id = '$request[movie_id]';");
+        WHERE movie_id = '$request[movie_id]'");
         return "Updated successfully!";
     } catch (Exception $e) {
         return $e->getMessage();
