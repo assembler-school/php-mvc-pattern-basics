@@ -41,3 +41,14 @@ a:hover {
   border: 1px solid rgb(78, 175, 231);
   border-radius: 50px;
 }
+
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 30vh;
+}
+.alertHeading {
+  text-align: center;
+}

@@ -15,9 +15,8 @@
 
     /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
-    /**
-     * This function calls the corresponding model function and includes the corresponding view
-     */
+    // Gets all employees from database and 
+    // renders them in employeeDashboard view
     function getAllEmployeesController(){
 
         $data = getAllEmployeesModel();
@@ -31,12 +30,29 @@
         
     }
 
-    /**
-     * This function calls the corresponding model function and includes the corresponding view
-     */
-    function getEmployee($request)
+    // Get an specific employee by their id and 
+    // reders them in employeeDashboard view
+    function getEmployeeByIdController($request)
     {
-        //
+        // Get specific travel details
+        $data = getEmployeeByIdModel();
+        
+        // Choosing view depending on if $data is empty
+        if(!empty($data)){
+            require_once VIEWS."employee/employeeDashboard.php";
+        }else{
+            require_once VIEWS."error/error.php";
+        }
+    }
+
+    // Deletes an Employee by their Id
+    function deleteEmployeeByIdController(){
+        
+        // Delete specific travel
+        deleteEmployeeByIdModel();
+        
+        // Reload all remaining travels
+        header("Location: ?controller=employees&action=getAllEmployeesController");
     }
 
     /**
@@ -47,6 +63,10 @@
         require_once VIEWS . "/error/error.php";
     }
 
-    // echo "I'm in employee controller <br>";
-    getAllEmployeesController();
+    // Choosing controller function to dispatch
+    if(function_exists($_GET["action"])){
+        call_user_func($_GET["action"], $_GET);
+    }else{
+        error("Invalid user action");
+    }
 ?>

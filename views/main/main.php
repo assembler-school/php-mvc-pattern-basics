@@ -13,11 +13,10 @@
         <header> <p class='headerTitle'>Make Your Request</p> </header>
         <main>
             <div class='BtnContainer'>
-                <!-- <a href='./controllers/employeeController.php'> -->
-                <a href='?controller=employees&action=getAllEmployees'>
+                <a href='?controller=employees&action=getAllEmployeesController'>
                     <div class='btnDiv'> Employees </div>
                 </a>
-                <a href='?controller=travels&action=getAllTravels'>
+                <a href='?controller=travels&action=getAllTravelsController'>
                     <div class='btnDiv'> Travels </div>
                 </a>
             </div>
