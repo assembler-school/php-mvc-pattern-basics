@@ -8,9 +8,9 @@
 
     <title>Document</title>
 </head>
-<?php print_r($movie[0][0]); ?>
 
 <body>
+    <a class="btn btn-primary stretched-link" href="index.php">GO BACK</a>
     <h1>Movie</h1>
 
 
