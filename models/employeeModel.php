@@ -14,8 +14,6 @@ function getAll()
         }
         return $returnArray;
     } else {
-        // echo
-        // "No results";
     }
 }
 
