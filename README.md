@@ -14,7 +14,6 @@
 - [Usage](#questions)
   - [Requirements](#requirements)
   - [Install](#clone)
-  - [Pages](#pages)
 - [Built with](#built-with)
 - [Resources](#resources)
 - [TODO](#todo)
