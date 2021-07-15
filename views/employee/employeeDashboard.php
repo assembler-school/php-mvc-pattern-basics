@@ -20,7 +20,7 @@
                 <th scope="col">Last</th>
                 <th scope="col">Gender</th>
                 <th scope="col">Hire Date</th>
-                <th scope="col"></th>
+                <th scope="col"><a href="?controller=employee&action=addEmployeeForm" class="btn btn-success">New</a></th>
             </tr>
         </thead>
         <tbody>

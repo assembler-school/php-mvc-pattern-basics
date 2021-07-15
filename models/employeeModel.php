@@ -24,21 +24,40 @@ function getById($id)
     require_once "config/db.php";
     $query = "
     SELECT 
-        employees.emp_no,
-        first_name,
-        last_name,
-        birth_date,
-        gender,
-        hire_date,
-        salary,
-        dept_name,
-        title
+    employees.emp_no,
+    first_name,
+    last_name,
+    birth_date,
+    gender,
+    hire_date,
+    salary,
+    dept_name,
+    title
     FROM employees
         JOIN salaries ON employees.emp_no = salaries.emp_no
         JOIN dept_emp ON employees.emp_no = dept_emp.emp_no
         JOIN departments ON dept_emp.dept_no = departments.dept_no
         JOIN titles ON employees.emp_no = titles.emp_no
-    WHERE employees.emp_no = $id";
+        WHERE employees.emp_no = $id";
     $result = mysqli_query($employeesDB, $query);
     return mysqli_fetch_assoc($result);
+}
+
+function addNew($data)
+{
+    require_once "config/db.php";
+    $query = "SELECT emp_no FROM `employees` ORDER BY emp_no DESC LIMIT 1";
+    $maxId = mysqli_fetch_assoc(mysqli_query($employeesDB, $query))['emp_no'] + 1;
+    // var_dump($maxId);
+    // echo "<br>";
+    $query = "
+    INSERT INTO employees 
+    (emp_no, birth_date, first_name, last_name, gender, hire_date)
+    VALUES
+    ($maxId, '{$data['birth_date']}', '{$data['first_name']}', '{$data['last_name']}', '{$data['gender']}', '{$data['hire_date']}')
+    ";
+    // echo $query;
+    // echo "<br>";
+
+    return mysqli_query($employeesDB, $query);
 }
