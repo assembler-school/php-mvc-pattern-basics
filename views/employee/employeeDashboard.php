@@ -7,11 +7,8 @@ echo "<h3>Employee list:</h3>";
 echo "<table class='table'>
   <thead class='thead-dark'>
     <tr >
-      <th scope='col'>No.</th>
       <th scope='col'>First Name</th>
       <th scope='col'>Last Name</th>
-      <th scope='col'>Gender</th>
-      <th scope='col'>Birth Date</th>
       <th scope='col'>Hire Date</th>
       <th scope='col'></th>
     </tr>
@@ -20,11 +17,8 @@ echo "<table class='table'>
   
 foreach ($employees as $employee) {
   echo "<tr>";
-  echo "<td>" . $employee['emp_no'] . "</td>";
   echo "<td>" . $employee['first_name'] . "</td>";
   echo "<td>" . $employee['last_name'] . "</td>";
-  echo "<td>" . $employee['gender'] . "</td>";
-  echo "<td>" . $employee['birth_date'] . "</td>";
   echo "<td>" . $employee['hire_date'] . "</td>";
   echo "<td> <a href='./index.php?controller=employees&action=getEmployee&id=$employee[emp_no]' class='btn btn-primary'> <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
   <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
@@ -38,5 +32,3 @@ foreach ($employees as $employee) {
   echo "</tr>";
 }
 echo "</tbody> </table> </div>";
-
-// echo "<a href='./index.php' class='btn btn-primary'>Back</a>";

@@ -22,16 +22,13 @@
   <main  class="p-2 min-vh-100">
   <?php
 
+  require_once('./config/constants.php');
+
   if(!isset($_GET['controller'])) {
-    echo "<h2 class='text-center'>MVC Pattern Basics</h2>";
-    echo "<div class='container-xl d-flex justify-content-between'>";
-      echo "<a href='./index.php?controller=employees&action=getAllEmployees' class='btn btn-primary w-50 mx-2'>Employees</a>";
-      echo "<a href='./index.php?controller=departments&action=getAllDepartments' class='btn btn-secondary w-50 mx-2'>Departments</a>";
-    echo "</div>";
+    require_once VIEWS . 'main/main.php';
   }
 
   if (isset($_GET['controller'])) {
-    require_once('./config/constants.php');
     if ($_GET['controller'] === "employees") {
       require_once CONTROLLERS . 'employeeController.php';
     }
@@ -39,6 +36,7 @@
       require_once CONTROLLERS . 'departmentController.php';
     }
   }
+  
   ?>
   </main>
   <footer class="container-fluid shadow-sm p-3 mt-3 bg-dark">
@@ -46,16 +44,3 @@
   </footer>
 </body>
 </html>
-
-<?php
-
-// This is the entry point of your application, all your application must be executed in
-// the "index.php", in such a way that you must include the controller passed by the URL
-// dynamically so that it ends up including the view.
-
-// include_once "config/constants.php";
-
-// TODO Implement the logic to include the controller passed by the URL dynamically
-// In the event that the controller passed by URL does not exist, you must show the error view.
-
-

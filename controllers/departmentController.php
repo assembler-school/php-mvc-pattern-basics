@@ -10,8 +10,13 @@ switch ($_GET['action']) {
       $request = $_GET['id'];
       getDepartment($request);
       break;
+  case "updateDepartment":
+        $request = $_GET['id'];
+        updateDepartment($request);
+        break;
   default:
-      echo "this is not a valid action";
+      $errorMsg = "You can't make this on the departments";
+      error($errorMsg);
       break;
 }
 
@@ -24,4 +29,14 @@ function getAllDepartments()
 function getDepartment($request) {
   $department = getDeptById($request);
   require_once VIEWS . "department/department.php";
+}
+
+function updateDepartment($request) {
+    updateById($request, $_POST);
+    header('Location: ./index.php?controller=departments&action=getAllDepartments');
+}
+
+function error($errorMsg)
+{
+    require_once VIEWS . "/error/error.php";
 }
