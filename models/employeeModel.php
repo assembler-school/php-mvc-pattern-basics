@@ -1,5 +1,7 @@
 <?php
 require_once("./config/dbConst.php");
+require_once("./config/helper.php");
+
 
 function get()
 {
@@ -7,25 +9,24 @@ function get()
         $dbConst = mysqli_connect(DB_HOST, USER_NAME, DB_PASSWORD, DB_NAME);
         $query = "SELECT * FROM employees;";
         $response = mysqli_query($dbConst, $query);
-        echo "employeeModel get() is done!";
+        debug_to_console("OK - You are calling correctly the get() function of the Model");
         return mysqli_fetch_all($response);
     } catch (Exception $e) {
         return $e->getMessage();
-        echo "employeeModel get() is not working!";
+        debug_to_console("NOT OK - You are NOT calling correctly to the get() function of the Model");
     }
 }
-
 function getEmployeeById($id)
 {
     try {
         $dbConst = mysqli_connect(DB_HOST, USER_NAME, DB_PASSWORD, DB_NAME);
         $query = "SELECT * FROM employees WHERE emp_id = $id";
         $response = mysqli_query($dbConst, $query);
-        echo "employeeModel getEmployeeById($id) is done!";
+        debug_to_console("OK - You are calling correctly the getEmployeeById() function of the Model");
         return mysqli_fetch_all($response);
     } catch (Exception $e) {
         return $e->getMessage();
-        echo "employeeModel getEmployeeById($id) is not working!";
+        debug_to_console("NOT OK - You are NOT calling correctly to the getEmployeeById() function of the Model");
     }
 }
 
