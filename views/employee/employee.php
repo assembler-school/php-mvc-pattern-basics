@@ -15,5 +15,7 @@
 </html>
 
 <?php
+require_once("./config/helper.php");
+debug_to_console("Test555");
 echo "IM THE employee VIEW";
 ?>

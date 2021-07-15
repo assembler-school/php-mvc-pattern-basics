@@ -6,6 +6,7 @@
 define("BASE_PATH", dirname(__FILE__));
 include_once "config/constants.php";
 include_once "config/dbConst.php";
+require_once("./config/helper.php");
 
 
 // echo "<pre>";
@@ -26,7 +27,7 @@ if (isset($_GET["controller"])) {
 } else {
     require_once VIEWS . "main/main.php";
 }
-echo "im an echo from index.php";
+debug_to_console("Executed from index.php");
 
 
 
