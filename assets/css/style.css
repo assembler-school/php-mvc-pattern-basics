@@ -35,7 +35,8 @@ td {
 }
 
 tbody > tr:hover {
-  background-color: rgb(240, 240, 240);
+  outline: 1px black solid;
+  /* background-color: rgb(240, 240, 240); */
   transition: 0.4s;
 }
 

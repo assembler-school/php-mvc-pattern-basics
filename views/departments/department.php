@@ -8,12 +8,16 @@ require_once VIEWS . "head/head.php";
 
     <form class="w-50">
         <div class="form-group mb-3 p-0">
-            <label for="inputEmail4">Department's id</label>
-            <input type="text" class="form-control" id="inputName" value="<?= $departmentData["dept_no"] ?>" placeholder="Id" maxlength="4">
+            <label for="inputDeptId">Department's id</label>
+            <input type="text" class="form-control" id="inputDeptId" value="<?= $departmentData["dept_no"] ?>" placeholder="Id" maxlength="4">
         </div>
         <div class="form-group mb-3 p-0">
-            <label for="inputPassword4">Department's name</label>
-            <input type="text" class="form-control" id="inputLastName" value="<?= $departmentData["dept_name"] ?>" placeholder="Name" maxlength="40">
+            <label for="inputDeptName">Department's name</label>
+            <input type="text" class="form-control" id="inputDeptName" value="<?= $departmentData["dept_name"] ?>" placeholder="Name" maxlength="40">
+        </div>
+        <div class="form-group mb-3 p-0">
+            <label for="inputDeptExpenses">Department's expenses</label>
+            <input type="string" class="form-control" id="inputDeptExpenses" value="<?= number_format($departmentExpenses["total-expenses"], 0, ',', '.') ?> €" placeholder="Expenses" maxlength="40" disabled>
         </div>
         <div class="form-group mb-3 p-0 h-auto">
             <label>Employees in department</label>
@@ -25,6 +29,7 @@ require_once VIEWS . "head/head.php";
                 </ul>
             </div>
         </div>
+
 
         <div class="d-flex container-fluid p-0 mt-4">
             <button type="submit" class="btn btn-dark mr-2">Update</button>

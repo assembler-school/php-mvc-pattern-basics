@@ -4,9 +4,9 @@ require_once VIEWS . "head/head.php"
 ?>
 
 <body>
-    <table class="dashboard w-100 p-0 mb-4">
+    <table class="dashboard w-100 p-0 mb-4 table table-striped">
         <!-- Top row -->
-        <thead>
+        <thead class="thead-dark">
             <tr class="border border-dark">
                 <th>Id</th>
                 <th>Name</th>

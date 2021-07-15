@@ -9,11 +9,12 @@ function getDepartments()
     $query = "SELECT
                 departments.dept_no,
                 departments.dept_name,
-                COUNT(dept_emp.emp_no) as 'num-employees'
+                COUNT(dept_emp.emp_no) as 'num-employees',
+                SUM(salaries.salary) as 'total-expenses'
             FROM
                 departments
-            INNER JOIN dept_emp
-            ON departments.dept_no = dept_emp.dept_no
+            JOIN dept_emp ON departments.dept_no = dept_emp.dept_no
+            JOIN salaries ON salaries.emp_no = dept_emp.emp_no
             GROUP BY departments.dept_no";
 
     $result = mysqli_query($employeesDB, $query);
@@ -50,6 +51,26 @@ function getById($id)
             array_push($allData, $row);
         }
     }
+
+    // Department expenes
+    $expensesQuery = "SELECT
+                SUM(salaries.salary) as 'total-expenses'
+            FROM
+                departments
+            JOIN dept_emp ON departments.dept_no = '$id'
+            JOIN salaries ON salaries.emp_no = dept_emp.emp_no";
+
+    $expensesResult = mysqli_query($employeesDB, $expensesQuery);
+
+    if (
+        mysqli_num_rows($expensesResult) > 0
+    ) {
+        while ($row = mysqli_fetch_assoc($expensesResult)) {
+            array_push($allData, $row);
+        }
+    }
+
+
 
     // Employees in department (array)
     $employeesQuery = "SELECT

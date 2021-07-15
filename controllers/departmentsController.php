@@ -43,7 +43,8 @@ function getDepartment($get)
 {
     $department = getById($get["id"]);
     $departmentData = $department[0];
-    $departmentEmployees = $department[1];
+    $departmentExpenses = $department[1];
+    $departmentEmployees = $department[2];
     require_once VIEWS . "departments/department.php";
 }
 
