@@ -13,7 +13,7 @@
 
 <body>
     <section>
-        <h2>MVC Pattern basics - Employees & Movies </h2>
+        <h2 class="mb-3 pt-2">MVC Pattern basics - Employees & Movies </h2>
         <ul class="link-group w-50">
             <li class="list-group-item"><a href="index.php?controller=employee&action=getAllEmployees">Employees</a></li>
             <li class="list-group-item"><a href="index.php?controller=movie&action=getAllMovies">Movies</a></li>
