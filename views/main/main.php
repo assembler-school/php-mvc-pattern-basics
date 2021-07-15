@@ -47,7 +47,7 @@
         </div>
         <ul>
             <li>
-                <p><b>Model</b> - Model represents an object or JAVA POJO carrying data. It can also have logic to update controller if its data changes.</p>
+                <p><b>Model</b> - The model component stores data and its related logic. It represents data that is being transferred between controller components or any other related business logic. It can also have logic to update controller if its data changes.</p>
             </li>
             <li>
                 <p><b>View</b> - View represents the visualization of the data that model contains.</p>
@@ -76,6 +76,7 @@
             <li><b>Controller</b>: Mechanism ( Engine)</li>
             <li><b>Model</b>: Storage ( Petrol or Diesel tank)</li>
         </ul>
+
         <h5>What advantages do you think this pattern has to use?</h5>
         <p>Here, are major benefits of using MVC architecture:</p>
         <ul>
