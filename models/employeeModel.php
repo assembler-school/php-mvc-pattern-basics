@@ -5,7 +5,7 @@ function get()
 {
     try {
         $dbConst = mysqli_connect(DB_HOST, USER_NAME, DB_PASSWORD, DB_NAME);
-        $query = "SELECT * FROM employees";
+        $query = "SELECT * FROM employees;";
         $response = mysqli_query($dbConst, $query);
         echo "employeeModel get() is done!";
         return mysqli_fetch_all($response);
@@ -40,7 +40,7 @@ function createEmployee($employee)
             mysqli_query(
                 $dbConst,
                 "INSERT INTO employees (first_name, last_name, gender, age) 
-                VALUES ('$employee[first_name]', '$employee[last_name]', '$employee[gender]', '$employee[age]')
+                VALUES ('$employee[first_name]', '$employee[last_name]', '$employee[gender]', '$employee[age]');
                 "
             );
             return "New employee created successfully!";
