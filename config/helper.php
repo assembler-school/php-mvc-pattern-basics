@@ -11,6 +11,8 @@ function debug_to_console($data)
 }
 
 
+//<?php
+
 //debug_to_console("Test");
 
 //require_once("./config/helper.php");
