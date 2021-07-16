@@ -4,36 +4,18 @@ require_once MODELS . "employeeModel.php";
 
 //OBTAIN THE ACCION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
 $action = $_GET["action"];
-if (isset($_GET["id"])) {
-    $id = $_GET["id"];
+
+if (function_exists($action)) {
+    list($params) = [
+        "getAllEmployees" => [[]],
+        "getEmployee" => [[]],
+        "getHolidays" => [[]],
+    ][$action] ?? [[]];
+    call_user_func($action, $params);
+} else {
+    error("Invalid function");
+    exit;
 }
-
-switch ($action) {
-    case 'getAllEmployees':
-        getAllEmployees();
-        break;
-    case 'getEmployee':
-        getEmployee($id);
-        break;
-    case 'getHolidays':
-        getHolidays();
-        break;
-
-    default:
-        error("Invalid function");
-        break;
-}
-
-// if (function_exists($action)) {
-//     list($params) = [
-//         "getAllEmployees" => [[]],
-//         "getEmployee" => $_GET["id"],
-//     ][$action] ?? [[]];
-//     call_user_func($action, $params);
-// } else {
-//     error("Invalid function");
-//     exit;
-// }
 
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
@@ -50,10 +32,10 @@ function getAllEmployees()
 /**
  * This function calls the corresponding model function and includes the corresponding view
  */
-function getEmployee($request)
+function getEmployee()
 {
     //
-    $employee = getById($request);
+    $employee = getById($_GET["id"]);
     require_once VIEWS . "employee/employee.php";
 }
 
