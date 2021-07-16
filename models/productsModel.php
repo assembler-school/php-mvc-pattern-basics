@@ -68,7 +68,6 @@ function getProductById($id)
     return $targetProduct;
 }
 
-
 function switchProductState($id)
 {
     $targetProduct = getProductById($id);
