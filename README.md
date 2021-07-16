@@ -34,6 +34,9 @@ _In order to view the application running on a browser, you should follow this s
 2. Open a local server environment such as MAMP or XAMPP.
 3. In order to use the database, you should _source_ the _employees.sql_ database.
 4. On config/db.php you should set your user's credentials you've stablished on your local server.
+5. If you want to use the ones already set on this file, you must create the user on your local server with these credentials:
+   1. _User_ -> nacho
+   2. _Password_ -> test
 
 ## Theory 📚
 
