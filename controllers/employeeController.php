@@ -1,21 +1,23 @@
 <?php
-
 require_once MODELS . "employeeModel.php";
 
-//OBTAIN THE ACCION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
+if (isset($_REQUEST["action"])) {
+    function_exists($_REQUEST["action"])
+        ? call_user_func($_REQUEST["action"], $_REQUEST)
+        : error("action does not exist");
+} else {
+    error("action error");
+}
 
-//Keep in mind that the function to be executed has to be one of the ones declared in this controller
-// TODO Implement the logic
 
-
-/* ~~~ CONTROLLER FUNCTIONS ~~~ */
-
-/**
- * This function calls the corresponding model function and includes the corresponding view
- */
 function getAllEmployees()
 {
-    //
+    try {
+        $employees = get();
+        require_once VIEWS . "/employee/employeeDashboard.php";
+    } catch (exception $e) {
+        error($e->getMessage());
+    }
 }
 
 /**
@@ -23,8 +25,49 @@ function getAllEmployees()
  */
 function getEmployee($request)
 {
-    //
+    $employee = getEmployeeById($request["id"]);
+    require_once VIEWS . "/employee/employee.php";
 }
+
+function createEmployee($request)
+{
+    require_once MODELS . "employeeModel.php";
+    if ($msg = newEmployee($request)) {
+        header("Location: index.php?controller=employee&action=getAllEmployees&msg=$msg");
+    } else {
+        error("Parameter Error");
+    }
+}
+
+function updateEmployee($request)
+{
+    if (isset($request["emp_id"])) {
+        require_once MODELS . "employeeModel.php";
+        if ($msg = updateEmployeeById($request)) {
+            header("Location: index.php?controller=employee&action=getAllEmployees&msg=$msg");
+        } else {
+            error("Database connection error");
+        }
+    } else {
+        error("Error");
+    }
+}
+
+function deleteEmployee($request)
+{
+    require_once MODELS . "employeeModel.php";
+    if (isset($request["id"])) {
+        if ($msg = deleteEmployeeById($request["id"])) {
+            deleteEmployeeById($request["id"]);
+            header("Location: index.php?controller=employee&action=getAllEmployees&msg=$msg");
+        } else {
+            error("Database Connection Error");
+        }
+    } else {
+        error("Parameter Error");
+    }
+}
+
 
 /**
  * This function includes the error view with a message

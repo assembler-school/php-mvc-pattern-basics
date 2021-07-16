@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700;800;900&display=swap');
+
+* {
+    font-family: 'Barlow', sans-serif;
+}
+
+section {
+    background-color: rgba(44, 196, 180, 0.651);
+    height: 100vh;
+}
+
+.mainList {
+    margin: 0 25%;
+    padding-top: 20px;
+}
+
+table {
+    background-color: rgb(252, 250, 250);
+    text-align: center;
+}
+th {
+    background-color: rgba(44, 196, 180, 0.651);
+}
+
+.addBtn {
+    width: 128px;
+}
+
+h1 {
+    font-weight: 800;
+    margin: 20px;
+}
