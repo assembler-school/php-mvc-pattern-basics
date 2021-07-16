@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Document</title>
+    <title>Movie Dashboard</title>
 </head>
 
 <body>
-    <h1>Movies</h1>
+    <h1 class="ml-3">Movies</h1>
     <table class="table">
         <thead>
             <tr>
@@ -19,7 +19,7 @@
                 <th>NAME</th>
                 <th>RELEASED</th>
                 <th>RUNNING TIME</th>
-                <th><?php echo "<a class='btn btn-info' href='?controller=movie&action=getMovie&id=" . $movie[0] . "'>ADD</a>" ?>
+                <th><?php echo "<a class='btn btn-warning' href='?controller=movie&action=getMovie&id=" . $movie[0] . "'>ADD</a>" ?>
                 </th>
             </tr>
         </thead>
