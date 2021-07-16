@@ -1,0 +1,23 @@
+{
+  "name": "19.1-MVC-Pattern-Basics",
+  "version": "1.0.0",
+  "description": "Readme example: [https://gist.github.com/Villanuevand/6386899f70346d4580c723232524d35a](https://gist.github.com/Villanuevand/6386899f70346d4580c723232524d35a)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ricard-Garcia/php-mvc-pattern-basics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ricard-Garcia/php-mvc-pattern-basics/issues"
+  },
+  "homepage": "https://github.com/Ricard-Garcia/php-mvc-pattern-basics#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0"
+  }
+}
