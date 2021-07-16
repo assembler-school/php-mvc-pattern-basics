@@ -17,6 +17,7 @@
         <td>' . $employee["last_name"] . '</td>
         <td>' . $employee["age"] . '</td>
         <td>' . $employee["email"] . '</td>
+        <td><a href="index.php?controller=employee&action=getEmployee&id=' . $employee["id"] . '"><button>View</button></a></td>
         <td><a href="index.php?controller=employee&action=deleteEmployee&id=' . $employee["id"] . '"><button>Delete</button></a></td>
       </tr>';
     }
