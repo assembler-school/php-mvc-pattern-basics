@@ -32,7 +32,7 @@
                 echo "<td>" . $movie[2] . "</td>";
                 echo "<td>" . $movie[3] . "</td>";
                 echo "<td> 
-                <a class='btn btn-secondary' href='?controller=movie&action=getMovie&id=" . $movie[0] . "'>Edit</a>
+                <a class='btn btn-info' href='?controller=movie&action=getMovie&id=" . $movie[0] . "'>Edit</a>
                 <a class='btn btn-danger' href='?controller=movie&action=deleteMovie&id=" . $movie[0] . "'>Delete</a>
                 </td>";
                 echo "</tr>";

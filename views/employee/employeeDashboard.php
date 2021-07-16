@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
     <h1 class="ml-3">Employees</h1>
     <table class="table">
         <thead>
@@ -23,32 +24,31 @@
                 <th>AGE</th>
                 <th>GENDER</th>
                 <?php
-                echo " <th><a class='btn btn-primary' href='?controller=employee&action=addEmployee&id=" . $employee[0] . "'>Add</a></th>";
+                echo " <th><a class='btn btn-warning' href='?controller=employee&action=getEmployee&id=" . $employee[0] . "'>Add</a></th>";
                 ?>
             </tr>
         </thead>
         <tbody>
             <?php
-            require_once("./config/helper.php");
             array_walk(
                 $employees,
                 function ($employee_data) {
                     $id = $employee_data[0];
                     $first_name =  $employee_data[1];
                     $last_name = $employee_data[2];
-                    $age = $employee_data[3];
-                    $gender =  $employee_data[4];
+                    $gender = $employee_data[3];
+                    $age =  $employee_data[4];
 
                     echo "<tr class='row-employee-data'>";
-                    echo " <td data-id='$id' class='toForm' >" . $id . "</td>";
-                    echo " <td data-id='$id' class='toForm' >" . $first_name . "</td>";
-                    echo " <td data-id='$id' class='toForm' >" . $last_name . "</td>";
-                    echo " <td data-id='$id' class='toForm' >" . $age . "</td>";
-                    echo " <td data-id='$id' class='toForm' >" . $gender . "</td>";
+                    echo " <td>" . $id . "</td>";
+                    echo " <td>" . $first_name . "</td>";
+                    echo " <td>" . $last_name . "</td>";
+                    echo " <td>" . $gender . "</td>";
+                    echo " <td>" . $age . "</td>";
 
                     echo "<td> 
-                    <a class='btn btn-secondary' href='?controller=employee&action=getEmployee&id=" . $employee[0] . "'>Edit</a>
-                    <a class='btn btn-danger' href='?controller=employee&action=deleteEmployee&id=" . $employee[0] . "'>Delete</a>
+                    <a class='btn btn-info' href='?controller=employee&action=getEmployee&id=" . $id . "'>Edit</a>
+                    <a class='btn btn-danger' href='?controller=employee&action=deleteEmployee&id=" . $id . "'>Delete</a>
 
                     </td>";
                     echo "</tr>";
