@@ -114,7 +114,7 @@ views/
 
 - [What can PHP do?](https://www.php.net/manual/es/intro-whatcando.php)
 
-- [MAMP](<(https://www.mamp.info/en/).>)
+- [MAMP](https://www.mamp.info/en/)
 
 - [How to install XAMPP on Windows](https://www.youtube.com/watch?v=h6DEDm7C37A)
 
