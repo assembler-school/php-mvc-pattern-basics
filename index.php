@@ -11,7 +11,11 @@
 
 
 
-if (isset($_GET["action"])) {
+if (isset($_GET["controller"])) {
+    if ($_GET["controller"] == 'productsController') {
+        require_once('C:\xampp\htdocs\php-mvc-pattern-basics\controllers\productsController.php');
+    }
 } else {
     require_once('C:\xampp\htdocs\php-mvc-pattern-basics\controllers\productsController.php');
+    echo 'first entry';
 }
