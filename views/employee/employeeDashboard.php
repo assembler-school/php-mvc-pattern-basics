@@ -15,7 +15,7 @@
 <body>
 
     <h1 class="ml-3">Employees</h1>
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
@@ -24,7 +24,7 @@
                 <th>AGE</th>
                 <th>GENDER</th>
                 <?php
-                echo " <th><a class='btn btn-warning' href='?controller=employee&action=getEmployee&id=" . $employee[0] . "'>Add</a></th>";
+                echo " <th><a class='btn btn-warning addBtn' href='?controller=employee&action=getEmployee&id=" . $employee[0] . "'>Add</a></th>";
                 ?>
             </tr>
         </thead>
@@ -40,11 +40,11 @@
                     $age =  $employee_data[4];
 
                     echo "<tr class='row-employee-data'>";
-                    echo " <td>" . $id . "</td>";
-                    echo " <td>" . $first_name . "</td>";
-                    echo " <td>" . $last_name . "</td>";
-                    echo " <td>" . $gender . "</td>";
-                    echo " <td>" . $age . "</td>";
+                    echo " <td class='align-middle'>" . $id . "</td>";
+                    echo " <td class='align-middle'>" . $first_name . "</td>";
+                    echo " <td class='align-middle'>" . $last_name . "</td>";
+                    echo " <td class='align-middle'>" . $gender . "</td>";
+                    echo " <td class='align-middle'>" . $age . "</td>";
 
                     echo "<td> 
                     <a class='btn btn-info' href='?controller=employee&action=getEmployee&id=" . $id . "'>Edit</a>
