@@ -5,7 +5,7 @@ function displayProductsList($productsList)
     echo "<h1>Products list</h1>";
     echo "<ul>";
     foreach ($productsList as $product) {
-        echo "<li>" . implode($product) . "</li>";
+        echo "<li>" . implode($product) . "<a href='index.php?id=" . $product['prod_id'] . "'> change state</a></li>";
     }
     echo "</ul>";
 }
@@ -22,6 +22,7 @@ function displayProductsList($productsList)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+    <link rel="stylesheet" href="../php-mvc-pattern-basics/assets/css/style.css">
 </head>
 
 <body>
