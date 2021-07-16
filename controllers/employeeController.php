@@ -7,29 +7,54 @@ require_once MODELS . "employeeModel.php";
 //Keep in mind that the function to be executed has to be one of the ones declared in this controller
 // TODO Implement the logic
 
+$action = $_GET["action"];
+
+switch ($action) {
+	case "getAllEmployees":
+		getAllEmployees();
+		break;
+	case "getEmployee":
+		getEmployee($_GET["id"]);
+		break;
+	case "addEmployee":
+		addEmployee();
+		break;
+	case "deleteEmployee":
+		deleteEmployee($_GET["id"]);
+		break;
+	default:
+		echo "test";
+		break;
+}
+
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
-/**
- * This function calls the corresponding model function and includes the corresponding view
- */
 function getAllEmployees()
 {
-    //
+	$employees = get();
+	require_once VIEWS . "employee/employeeDashboard.php";
 }
 
-/**
- * This function calls the corresponding model function and includes the corresponding view
- */
-function getEmployee($request)
+function getEmployee($id)
 {
-    //
+	$employee = getById($id);
+	require_once VIEWS . "employee/employee.php";
 }
 
-/**
- * This function includes the error view with a message
- */
+function addEmployee()
+{
+	post();
+	getAllEmployees();
+}
+
+function deleteEmployee($id)
+{
+	deleteById($id);
+	getAllEmployees();
+}
+
 function error($errorMsg)
 {
-    require_once VIEWS . "/error/error.php";
+	require_once VIEWS . "/error/error.php";
 }
