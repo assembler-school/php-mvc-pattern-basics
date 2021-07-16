@@ -142,6 +142,7 @@ Open XAMP/MAMP server and open the link to your project in your `localhost`.
 ## TODO 🤝
 
 - Manage errors entered by URL other than unexistant actions.
+- Get controllers dynamically.
 
 ## Bugs 🚨
 
