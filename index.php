@@ -18,6 +18,9 @@ include_once "config/constants.php";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;900&family=BioRhyme:wght@200;800&family=IBM+Plex+Serif:wght@100;300;700&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 
@@ -25,19 +28,26 @@ include_once "config/constants.php";
   <?php
   include_once ASSETS . "html/header.html";
   ?>
-  <?php
-  if (isset($_GET["controller"])) {
-    if ($_GET["controller"] == "employee") {
-      require_once CONTROLLERS . "employeeController.php";
+  <main>
+    <?php
+    include_once ASSETS . "html/menu.php";
+    if (isset($_GET["controller"])) {
+      if ($_GET["controller"] == "employee") {
+        require_once CONTROLLERS . "employeeController.php";
+      }
+      if ($_GET["controller"] == "travel") {
+        require_once CONTROLLERS . "travelController.php";
+      }
+    } else {
+      require_once VIEWS . "main/main.php";
     }
-    if ($_GET["controller"] == "travel") {
-      require_once CONTROLLERS . "travelController.php";
-    }
-  } else {
-    require_once VIEWS . "main/main.php";
-  }
-  ?>
+    ?>
+  </main>
 </body>
 
 </html>
-<script src="assets/js/utils.js"></script>
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
