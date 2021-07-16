@@ -1,6 +1,5 @@
 <?php
 require_once("./config/dbConst.php");
-require_once("./config/helper.php");
 
 
 function get()

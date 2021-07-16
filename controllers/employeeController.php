@@ -1,6 +1,5 @@
 <?php
 require_once MODELS . "employeeModel.php";
-require_once("./config/helper.php");
 
 if (isset($_REQUEST["action"])) {
     function_exists($_REQUEST["action"])
@@ -16,10 +15,8 @@ function getAllEmployees()
     try {
         $employees = get();
         require_once VIEWS . "/employee/employeeDashboard.php";
-        debug_to_console("OK - You are calling correctly to the getAllEmployees function of the Controller");
     } catch (exception $e) {
         error($e->getMessage());
-        debug_to_console("NOT OK - You are not calling correctly to the getAllEmployees function of the Controller");
     }
 }
 
@@ -78,5 +75,4 @@ function deleteEmployee($request)
 function error($errorMsg)
 {
     require_once VIEWS . "/error/error.php";
-    debug_to_console("Error view es correctly required from error function of the controller");
 }

@@ -54,8 +54,6 @@
                     echo "</tr>";
                 }
             );
-            debug_to_console("OK - EXECUTED View employee Dashboard");
-
             ?>
         </tbody>
     </table>

@@ -25,6 +25,4 @@
 
 </html>
 <?php
-require_once("./config/helper.php");
-debug_to_console("OK -You are executing main.php VIEW");
 ?>
