@@ -3,7 +3,6 @@
 define("BASE_PATH", dirname(__FILE__));
 include_once "config/constants.php";
 include_once "config/dbConst.php";
-require_once("./config/helper.php");
 
 
 if (isset($_GET["controller"])) {
