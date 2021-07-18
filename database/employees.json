@@ -1,0 +1,89 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"employees"},
+{"type":"table","name":"departments","database":"employees","data":
+[
+{"dept_no":"2","dept_name":"Finance"},
+{"dept_no":"3","dept_name":"Management"},
+{"dept_no":"5","dept_name":"Marketing"},
+{"dept_no":"1","dept_name":"Production"},
+{"dept_no":"4","dept_name":"R&D"}
+]
+}
+,{"type":"table","name":"dept_emp","database":"employees","data":
+[
+{"emp_no":"1","dept_no":"1","from_date":"2014-10-09","to_date":"2021-04-25"},
+{"emp_no":"2","dept_no":"2","from_date":"2015-02-10","to_date":"2021-03-15"},
+{"emp_no":"3","dept_no":"3","from_date":"2015-05-10","to_date":"2021-05-21"},
+{"emp_no":"5","dept_no":"5","from_date":"2014-04-22","to_date":"2021-03-02"},
+{"emp_no":"6","dept_no":"1","from_date":"2008-12-22","to_date":"2021-06-18"},
+{"emp_no":"8","dept_no":"3","from_date":"2008-11-02","to_date":"2017-04-06"},
+{"emp_no":"10","dept_no":"5","from_date":"2008-09-05","to_date":"2017-08-19"},
+{"emp_no":"11","dept_no":"1","from_date":"2007-01-08","to_date":"2020-02-19"},
+{"emp_no":"12","dept_no":"2","from_date":"2009-07-06","to_date":"2020-02-04"},
+{"emp_no":"13","dept_no":"3","from_date":"2006-10-31","to_date":"2016-10-22"},
+{"emp_no":"14","dept_no":"4","from_date":"2008-06-06","to_date":"2019-09-04"},
+{"emp_no":"15","dept_no":"5","from_date":"2007-12-22","to_date":"2018-10-13"},
+{"emp_no":"16","dept_no":"1","from_date":"2009-11-17","to_date":"2020-12-29"}
+]
+}
+,{"type":"table","name":"dept_manager","database":"employees","data":
+[
+{"emp_no":"1","dept_no":"3","from_date":"2008-11-22","to_date":"2018-08-15"},
+{"emp_no":"2","dept_no":"3","from_date":"2006-04-26","to_date":"2018-08-25"},
+{"emp_no":"3","dept_no":"3","from_date":"2009-03-07","to_date":"2017-11-29"},
+{"emp_no":"5","dept_no":"3","from_date":"2007-09-12","to_date":"2020-04-24"}
+]
+}
+,{"type":"table","name":"employees","database":"employees","data":
+[
+{"emp_no":"1","birth_date":"1992-06-14","first_name":"Maribel","last_name":"Serafina Elizond","gender":"M","hire_date":"2021-01-21"},
+{"emp_no":"2","birth_date":"1993-10-30","first_name":"Maribel","last_name":"Chuy Barros","gender":"F","hire_date":"2018-12-02"},
+{"emp_no":"3","birth_date":"1993-12-30","first_name":"Maribel","last_name":"Delia toto GAG G","gender":"M","hire_date":"2021-03-03"},
+{"emp_no":"5","birth_date":"1992-08-26","first_name":"Venceslás","last_name":"Vinicio Domíngue","gender":"F","hire_date":"2016-08-02"},
+{"emp_no":"6","birth_date":"1990-09-04","first_name":"María","last_name":"Domínguez Lozano","gender":"F","hire_date":"2018-11-24"},
+{"emp_no":"8","birth_date":"1993-05-12","first_name":"Julio César","last_name":"Cipriano Barros","gender":"M","hire_date":"2018-01-18"},
+{"emp_no":"10","birth_date":"1992-12-02","first_name":"Sebastián","last_name":"África Rojas","gender":"M","hire_date":"2020-06-10"},
+{"emp_no":"11","birth_date":"1994-05-03","first_name":"Pepita","last_name":"Severiano Cabrer","gender":"F","hire_date":"2018-04-21"},
+{"emp_no":"12","birth_date":"1994-05-25","first_name":"Nayeli","last_name":"Baldo Martinez","gender":"F","hire_date":"2020-01-06"},
+{"emp_no":"13","birth_date":"1992-10-10","first_name":"Pilar","last_name":"Máximo Blanco","gender":"F","hire_date":"2016-10-10"},
+{"emp_no":"14","birth_date":"1991-06-09","first_name":"Jaime","last_name":"Tatiana Gutiérre","gender":"M","hire_date":"2019-10-18"},
+{"emp_no":"15","birth_date":"1990-07-27","first_name":"Osvaldo","last_name":"Alondra Benítez","gender":"M","hire_date":"2021-05-20"},
+{"emp_no":"16","birth_date":"1991-02-12","first_name":"Marisol","last_name":"San Antonio","gender":"F","hire_date":"2019-05-14"}
+]
+}
+,{"type":"table","name":"salaries","database":"employees","data":
+[
+{"emp_no":"1","salary":"35013","from_date":"2008-06-09","to_date":"2020-07-19"},
+{"emp_no":"2","salary":"34871","from_date":"2006-12-28","to_date":"2018-03-31"},
+{"emp_no":"3","salary":"9316","from_date":"2008-02-04","to_date":"2020-04-03"},
+{"emp_no":"5","salary":"26344","from_date":"2009-02-03","to_date":"2020-12-06"},
+{"emp_no":"6","salary":"35335","from_date":"2010-08-01","to_date":"2021-05-17"},
+{"emp_no":"8","salary":"32934","from_date":"2008-09-01","to_date":"2021-01-02"},
+{"emp_no":"10","salary":"41828","from_date":"2010-04-23","to_date":"2017-03-04"},
+{"emp_no":"11","salary":"12386","from_date":"2009-08-13","to_date":"2018-11-19"},
+{"emp_no":"12","salary":"6540","from_date":"2007-09-22","to_date":"2017-06-24"},
+{"emp_no":"13","salary":"18750","from_date":"2010-02-27","to_date":"2018-09-22"},
+{"emp_no":"14","salary":"28424","from_date":"2006-01-18","to_date":"2021-05-20"},
+{"emp_no":"15","salary":"22669","from_date":"2006-04-07","to_date":"2020-07-19"},
+{"emp_no":"16","salary":"21053","from_date":"2009-08-30","to_date":"2017-01-04"}
+]
+}
+,{"type":"table","name":"titles","database":"employees","data":
+[
+{"emp_no":"1","title":"degree","from_date":"2020-06-08","to_date":"2021-07-09"},
+{"emp_no":"2","title":"degree","from_date":"2020-08-09","to_date":"2021-06-24"},
+{"emp_no":"3","title":"degree","from_date":"2020-07-08","to_date":"2021-07-12"},
+{"emp_no":"5","title":"degree","from_date":"2020-04-30","to_date":"2021-07-05"},
+{"emp_no":"6","title":"degree","from_date":"2014-09-11","to_date":"2018-06-27"},
+{"emp_no":"8","title":"degree","from_date":"2010-09-17","to_date":"2019-07-18"},
+{"emp_no":"10","title":"degree","from_date":"2011-04-21","to_date":"2018-04-19"},
+{"emp_no":"11","title":"degree","from_date":"2013-12-18","to_date":"2020-03-31"},
+{"emp_no":"12","title":"degree","from_date":"2012-11-08","to_date":"2018-01-19"},
+{"emp_no":"13","title":"degree","from_date":"2012-10-26","to_date":"2020-05-22"},
+{"emp_no":"14","title":"degree","from_date":"2012-02-24","to_date":"2018-10-31"},
+{"emp_no":"15","title":"degree","from_date":"2014-09-06","to_date":"2017-06-29"},
+{"emp_no":"16","title":"degree","from_date":"2013-12-03","to_date":"2018-05-23"}
+]
+}
+]
