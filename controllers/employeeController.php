@@ -38,7 +38,7 @@ if (function_exists($action)) {
  */
 function getAllEmployees()
 {
-    $employees = getEmployees();
+    $employees = getAll();
     require_once VIEWS . "employee/employeeDashboard.php";
 }
 
@@ -48,7 +48,7 @@ function getAllEmployees()
  */
 function getEmployee($id)
 {
-    $employee = getEmployeeById($id);
+    $employee = getById($id);
     if (is_array($employee)) {
         require_once VIEWS . "employee/employee.php";
     } else {
@@ -65,7 +65,7 @@ function getEmployee($id)
  */
 function updateEmployee($newEmployee)
 {
-    $result = updateEmployeeById($newEmployee);
+    $result = updateById($newEmployee);
     if ($result === true) {
         header("Location:?controller=employees&action=getAllEmployees");
     } else {
@@ -78,7 +78,7 @@ function updateEmployee($newEmployee)
  */
 function deleteEmployee($post)
 {
-    $result = deleteEmployeeById($post['emp_no']);
+    $result = deleteById($post['emp_no']);
     if ($result === true) {
         header("Location:?controller=employees&action=getAllEmployees");
     } else {

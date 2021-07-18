@@ -37,11 +37,17 @@
     </nav>
 
     <div class="container">
-        <!-- <h2>Explanation</h2> -->
-        <p>MVC Pattern stands for Model-View-Controller Pattern. This pattern is used to separate application's concerns.</p>
-        <ul class="list">
+        <h5>What is an architecture pattern?</h5>
+        <p>The architectural pattern shows how a solution can be used to solve a reoccurring problem. In another word, it reflects how a code or components interact with each other. Moreover, the architectural pattern is describing the architectural style of our system and provides solutions for the issues in our architectural style. For example: how to separate the UI of the data module in our architectural style? How to integrate a third-party component with our system? how many tires will we have in our client-server architecture? Examples of architectural patterns are microservices, message bus, service requester/ consumer, MVC, MVVM, microkernel, n-tier, domain-driven design, and presentation-abstraction-control.</p>
+
+        <h5>What is the MVC pattern?</h5>
+        <p>MVC is a software architecture pattern, which separates the data and business logic of an application from its representation and the module responsible for managing events and communications. MVC Pattern stands for Model-View-Controller Pattern. This pattern is used to separate application's concerns.</p>
+        <div class="row justify-content-center">
+            <img class="img-fluid centered-image" src="./assets/img/mvc-diagram.png" alt="MVC Pattern Diagram" />
+        </div>
+        <ul>
             <li>
-                <p><b>Model</b> - Model represents an object or JAVA POJO carrying data. It can also have logic to update controller if its data changes.</p>
+                <p><b>Model</b> - The model component stores data and its related logic. It represents data that is being transferred between controller components or any other related business logic. It can also have logic to update controller if its data changes.</p>
             </li>
             <li>
                 <p><b>View</b> - View represents the visualization of the data that model contains.</p>
@@ -50,12 +56,43 @@
                 <p><b>Controller</b> - Controller acts on both model and view. It controls the data flow into model object and updates the view whenever data changes. It keeps view and model separate.</p>
             </li>
         </ul>
-        <!-- <h2>Implementation</h2>
-        <p>We are going to create a <i>Employee</i> object acting as a model.<i>StudentView</i> will be a view class which can print student details on console and <i>StudentController</i> is the controller class responsible to store data in <i>Student</i> object and update view <i>StudentView</i> accordingly.</p>
-        <p><i>MVCPatternDemo</i>, our demo class, will use <i>StudentController</i> to demonstrate use of MVC pattern.</p> -->
-        <div class="row justify-content-center">
-            <img class="img-fluid centered-image" src="./assets/img/mvc-diagram.png" alt="MVC Pattern Diagram" />
+
+        <h5>Draw a scheme where you understand that the MVC pattern is clearly</h5>
+        <div class="row mt-4 justify-content-center">
+            <img class="img-fluid centered-image" src="./assets/img/mvc-scheme-question.png" alt="MVC scheme" />
         </div>
+
+        <h5>Explain in which cases you would use this pattern</h5>
+        <p>The MVC pattern can always be used on any dynamic web page, it helps to separate the graphical part from the logic behind it. In the case of 100% static pages it may not make much sense to use this pattern.</p>
+
+        <h5>Describe step by step what happens in this pattern from when you create a Request until a Response is returned (you can give more than one example if you consider it necessary).</h5>
+        <p>When the user (browser) interacts with our page and takes an action, the request is sent to the server.</p>
+        <p> The controller takes the event, processes it, and looks up the correct information from the model who's stores the data and supplies the controller and the view of the necessary data.</p>
+        <p>Once the data is received from the model, the controller, based on the action requested by the user, calls the view (the graphic part) and returns the necessary information that has been requested.</p>
+        <h6>Example</h6>
+        <p>Car driving mechanism is an example of the MVC model. Every car consist of three main parts:</p>
+        <ul>
+            <li><b>View</b>: User interface ( Gear lever, panels, steering wheel, brake, etc.)</li>
+            <li><b>Controller</b>: Mechanism ( Engine)</li>
+            <li><b>Model</b>: Storage ( Petrol or Diesel tank)</li>
+        </ul>
+
+        <h5>What advantages do you think this pattern has to use?</h5>
+        <p>Here, are major benefits of using MVC architecture:</p>
+        <ul>
+            <li>Easy code maintenance easy to extend and grow</li>
+            <li>MVC Model component can be tested separately from the user</li>
+            <li>Easier support for new type of clients</li>
+            <li>Development of the various components can be performed in a divided way.</li>
+            <li>It helps you to avoid complexity by dividing an application into the three units. Model, View, and controller</li>
+            <li>It only uses a Front Controller pattern which process web application requests through a single controller.</li>
+            <li>Each part can be tested independently (Model, view, controller)</li>
+            <li>It works well for Web apps which are supported by large teams of web designers and developers.</li>
+            <li>Easier to maintain or modify.</li>
+            <li>Search Engine Optimization (SEO) Friendly.</li>
+            <li>All classed and objects are independent of each other so that you can test them separately.</li>
+            <li>MVC design pattern allows logical grouping of related actions on a controller together.</li>
+        </ul>
     </div>
 </body>
 

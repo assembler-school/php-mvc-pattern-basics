@@ -35,7 +35,7 @@ if (function_exists($action)) {
  */
 function getAllEmployees()
 {
-    $salaryEmployees = getSalaryEmployees();
+    $salaryEmployees = getAll();
     require_once VIEWS . "salary/salaryDashboard.php";
 }
 
@@ -45,7 +45,7 @@ function getAllEmployees()
  */
 function getEmployeeSalary($id)
 {
-    $salaryEmployees = getSalaryEmployeeById($id);
+    $salaryEmployees = getById($id);
     if (is_array($salaryEmployees)) {
         require_once VIEWS . "salary/salary.php";
     } else {

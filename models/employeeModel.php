@@ -1,9 +1,10 @@
 <?php
 
-function getEmployees()
+function getAll()
 {
     $conn = db_connect();
-    $sql = "SELECT * FROM employees";
+    $sql = "
+    SELECT * FROM employees";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -16,17 +17,11 @@ function getEmployees()
     return null;
 }
 
-function getEmployeeById($id)
+function getById($id)
 {
     $conn = db_connect();
-    $sql = "SELECT * FROM employees WHERE emp_no=$id";
-    $result = mysqli_query($conn, $sql);
-
-    // if (mysqli_num_rows($result) > 0) {
-    //     $row = mysqli_fetch_assoc($result);
-    // }
-    // mysqli_close($conn);
-    // return $row ?? null;
+    $sql = "
+    SELECT * FROM employees WHERE emp_no=$id";
 
     if ($result = mysqli_query($conn, $sql)) {
         $row = mysqli_fetch_assoc($result);
@@ -39,10 +34,10 @@ function getEmployeeById($id)
     return $err;
 }
 
-function updateEmployeeById($newEmployee)
+function updateById($newEmployee)
 {
     $id = $newEmployee['emp_no'] ?? null;
-    if ($employee = getEmployeeById($id)) {
+    if ($employee = getById($id)) {
         $employee = array_merge($employee, $newEmployee);
         $birth_date = $employee['birth_date'];
         $first_name = $employee['first_name'];
@@ -54,7 +49,8 @@ function updateEmployeeById($newEmployee)
     }
 
     $conn = db_connect();
-    $sql = "UPDATE employees SET birth_date='$birth_date', 
+    $sql = "
+    UPDATE employees SET birth_date='$birth_date', 
     first_name='$first_name',
     last_name='$last_name',
     gender='$gender',
@@ -71,14 +67,15 @@ function updateEmployeeById($newEmployee)
     return $err;
 }
 
-function deleteEmployeeById($id)
+function deleteById($id)
 {
-    if (!getEmployeeById($id)) {
+    if (!getById($id)) {
         return null;
     }
 
     $conn = db_connect();
-    $sql = "DELETE FROM employees WHERE emp_no=$id";
+    $sql = "
+    DELETE FROM employees WHERE emp_no=$id";
 
     if ($result = mysqli_query($conn, $sql)) {
         mysqli_close($conn);
@@ -92,11 +89,8 @@ function deleteEmployeeById($id)
 
 function db_connect()
 {
-    $serverName = "localhost";
-    $userName = "root";
-    $password = "";
-    $dbName = "employees";
-    $conn = mysqli_connect($serverName, $userName, $password, $dbName);
+    require_once("config/db.php");
+    $conn = mysqli_connect(SERVER_NAME, USER_NAME, PASSWORD, DB_NAME);
 
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());

@@ -1,10 +1,11 @@
 <?php
 
 
-function getSalaryEmployees()
+function getAll()
 {
     $conn = db_connect();
-    $sql = "SELECT 
+    $sql = "
+    SELECT 
     E.emp_no,E.first_name,E.last_name,S.salary,S.from_date,S.to_date
     FROM employees E
     JOIN salaries S
@@ -22,10 +23,11 @@ function getSalaryEmployees()
     return $employees;
 }
 
-function getSalaryEmployeeById($id)
+function getById($id)
 {
     $conn = db_connect();
-    $sql = "SELECT 
+    $sql = "
+    SELECT 
     E.emp_no,E.first_name,E.last_name,S.salary,S.from_date,S.to_date
     FROM employees E
     JOIN salaries S
@@ -45,11 +47,8 @@ function getSalaryEmployeeById($id)
 
 function db_connect()
 {
-    $serverName = "localhost";
-    $userName = "root";
-    $password = "";
-    $dbName = "employees";
-    $conn = mysqli_connect($serverName, $userName, $password, $dbName);
+    require_once('config/db.php');
+    $conn = mysqli_connect(SERVER_NAME, USER_NAME, PASSWORD, DB_NAME);
 
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
