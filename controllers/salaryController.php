@@ -1,6 +1,5 @@
 <?php
-
-require_once MODELS . "employeeModel.php";
+require_once MODELS . "salaryModel.php";
 
 // if no action
 if (!isset($_GET['action'])) {
@@ -14,9 +13,7 @@ $id = $_GET['id'] ?? null;
 if (function_exists($action)) {
     list($params) = [
         'getAllEmployees' => [[]],
-        'getEmployee' => [$id],
-        'updateEmployee' => [$_POST],
-        'deleteEmployee' => [$_POST],
+        'getEmployeeSalary' => [$id],
     ][$action] ?? [[]];
 
     call_user_func($action, $params);
@@ -38,52 +35,26 @@ if (function_exists($action)) {
  */
 function getAllEmployees()
 {
-    $employees = getAll();
-    require_once VIEWS . "employee/employeeDashboard.php";
+    $salaryEmployees = getAll();
+    require_once VIEWS . "salary/salaryDashboard.php";
 }
 
 /**
  * This function calls the corresponding model function and 
  * includes the corresponding view
  */
-function getEmployee($id)
+function getEmployeeSalary($id)
 {
-    $employee = getById($id);
-    if (is_array($employee)) {
-        require_once VIEWS . "employee/employee.php";
+    $salaryEmployees = getById($id);
+    if (is_array($salaryEmployees)) {
+        require_once VIEWS . "salary/salary.php";
     } else {
-        if (!$employee) {
+        if (!$salaryEmployees) {
             error("Employee with id $id not found!");
             exit;
         }
-        error($employee);
+        error($salaryEmployees);
     }
-}
-
-/**
- * This function updates employee
- */
-function updateEmployee($newEmployee)
-{
-    $result = updateById($newEmployee);
-    if ($result === true) {
-        header("Location:?controller=employees&action=getAllEmployees");
-    } else {
-        error($result);
-    };
-}
-
-/**
- * This function deletes employee
- */
-function deleteEmployee($post)
-{
-    $result = deleteById($post['emp_no']);
-    if ($result === true) {
-        header("Location:?controller=employees&action=getAllEmployees");
-    } else {
-        error($result);
-    };
 }
 
 /**
